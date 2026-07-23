@@ -1,0 +1,461 @@
+export type Persona = "software" | "embedded";
+export type Lang = "en" | "de";
+export type L = { en: string; de: string };
+
+export type SkillCategory =
+  | "Languages"
+  | "Backend"
+  | "Frontend"
+  | "Testing"
+  | "Messaging & Data"
+  | "DevOps"
+  | "Tools"
+  | "Embedded & Hardware"
+  | "OS";
+
+export interface Skill {
+  name: string;
+  category: SkillCategory;
+  personas: Persona[];
+  /** ids of experience / education / project entries where this was actually used */
+  sourceIds: string[];
+}
+
+export interface Bullet {
+  text: L;
+  personas: Persona[];
+}
+
+export interface ExperienceEntry {
+  id: string;
+  org: string;
+  role: L;
+  location: string;
+  period: L;
+  personas: Persona[];
+  blurb: L;
+  bullets: Bullet[];
+  skills: string[];
+}
+
+export interface EducationEntry {
+  id: string;
+  school: string;
+  degree: L;
+  location: string;
+  period: L;
+  personas: Persona[];
+  detail: L;
+  skills: string[];
+}
+
+export interface ProjectLink {
+  label: string;
+  href: string;
+}
+
+export interface ProjectEntry {
+  id: string;
+  name: string;
+  period: L;
+  personas: Persona[];
+  tagline: L;
+  description: L[];
+  skills: string[];
+  links?: ProjectLink[];
+  featured: boolean;
+}
+
+export const profile = {
+  name: "Biplov Pokhrel",
+  location: "Chemnitz, Germany",
+  taglineSoftware: {
+    en: "Backend engineer who ships, reviews, and occasionally argues with Kafka.",
+    de: "Backend-Entwickler, der ausliefert, reviewt und sich gelegentlich mit Kafka streitet.",
+  } as L,
+  taglineEmbedded: {
+    en: "Currently trading REST APIs for register maps and interrupt vectors.",
+    de: "Tauscht gerade REST-APIs gegen Registerkarten und Interrupt-Vektoren ein.",
+  } as L,
+  heroIntro: {
+    en: "Software Engineer out of Bangalore, now doing a master's in Automotive Software Engineering in Chemnitz. I write backend systems and, lately, code that talks directly to silicon. Flip the toggle up top — same person, different register.",
+    de: "Software Engineer aus Bangalore, mache gerade einen Master in Automotive Software Engineering in Chemnitz. Ich schreibe Backend-Systeme und neuerdings auch Code, der direkt mit Silizium spricht. Der Schalter oben wechselt die Perspektive — gleiche Person, anderes Register.",
+  } as L,
+  email: "biplov.tuchemnitz@gmail.com",
+  emailAlt: "biplov.nitrkl@gmail.com",
+  phone: "+49 1633922349",
+  linkedin: "https://linkedin.com/in/biplov-nitrkl",
+  github: "https://github.com/pbplop29",
+  resumeUrl: "/resume/Biplov_Pokhrel.pdf",
+};
+
+export const experience: ExperienceEntry[] = [
+  {
+    id: "exp-lowes-se",
+    org: "Lowe's India",
+    role: { en: "Software Engineer", de: "Software Engineer" },
+    location: "Bangalore, India",
+    period: { en: "May 2025 – Oct 2025", de: "Mai 2025 – Okt. 2025" },
+    personas: ["software"],
+    blurb: {
+      en: "Went from writing tickets to writing the tickets other people write tickets about.",
+      de: "Vom Tickets-Schreiben zum Schreiben der Tickets, über die andere Tickets schreiben.",
+    },
+    bullets: [
+      {
+        text: {
+          en: "Owned features end-to-end — planning, design, implementation, testing, deployment, and production support.",
+          de: "Verantwortete Features end-to-end — Planung, Design, Implementierung, Tests, Deployment und Produktionssupport.",
+        },
+        personas: ["software"],
+      },
+      {
+        text: {
+          en: "Partnered with product to turn fuzzy asks into technical solutions that actually shipped.",
+          de: "Arbeitete eng mit dem Produktteam zusammen, um vage Anforderungen in technische Lösungen zu verwandeln, die tatsächlich ausgeliefert wurden.",
+        },
+        personas: ["software"],
+      },
+      {
+        text: {
+          en: "Wrote architectural design docs and guided teammates through implementation.",
+          de: "Schrieb Architektur-Design-Dokumente und leitete Teammitglieder durch die Implementierung.",
+        },
+        personas: ["software"],
+      },
+      {
+        text: {
+          en: "Integrated OpenAI APIs into existing architecture to digitize handwritten data.",
+          de: "Integrierte OpenAI-APIs in die bestehende Architektur zur Digitalisierung handschriftlicher Daten.",
+        },
+        personas: ["software"],
+      },
+      {
+        text: {
+          en: "Built migration tooling to replace an Apache NiFi pipeline, adding visualization and validation along the way.",
+          de: "Baute Migrationswerkzeuge zum Ersatz einer Apache-NiFi-Pipeline, inklusive Visualisierung und Validierung.",
+        },
+        personas: ["software"],
+      },
+      {
+        text: {
+          en: "Lived in production: deployments, bug fixes, incident response, stability management.",
+          de: "Lebte in der Produktion: Deployments, Bugfixes, Incident Response, Stabilitätsmanagement.",
+        },
+        personas: ["software"],
+      },
+      {
+        text: {
+          en: "Kept Confluence honest and PRs reviewed — planning, design, refinement, the whole loop.",
+          de: "Hielt Confluence aktuell und PRs reviewt — Planung, Design, Refinement, der ganze Kreislauf.",
+        },
+        personas: ["software"],
+      },
+    ],
+    skills: ["Java", "Spring Boot", "Spring WebFlux", "Apache NiFi", "Apache Superset", "Kibana", "Grafana", "Git", "Jira", "Jenkins", "Docker"],
+  },
+  {
+    id: "exp-lowes-ase",
+    org: "Lowe's India",
+    role: { en: "Associate Software Engineer", de: "Associate Software Engineer" },
+    location: "Bangalore, India",
+    period: { en: "June 2023 – May 2025", de: "Juni 2023 – Mai 2025" },
+    personas: ["software"],
+    blurb: {
+      en: "Two years of backend microservices, React glue code, and learning what \"enterprise retail scale\" actually means.",
+      de: "Zwei Jahre Backend-Microservices, React-Klebecode und die Erkenntnis, was \"Enterprise-Retail-Skala\" wirklich bedeutet.",
+    },
+    bullets: [
+      {
+        text: {
+          en: "Built and maintained backend microservices in Java, Spring Boot, and Spring WebFlux for enterprise retail systems.",
+          de: "Entwickelte und pflegte Backend-Microservices in Java, Spring Boot und Spring WebFlux für Enterprise-Retail-Systeme.",
+        },
+        personas: ["software"],
+      },
+      {
+        text: {
+          en: "Implemented RESTful APIs and business logic alongside senior engineers.",
+          de: "Implementierte RESTful APIs und Geschäftslogik gemeinsam mit Senior Engineers.",
+        },
+        personas: ["software"],
+      },
+      {
+        text: {
+          en: "Built React frontend components wired straight into backend REST APIs.",
+          de: "Baute React-Frontend-Komponenten, direkt verdrahtet mit Backend-REST-APIs.",
+        },
+        personas: ["software"],
+      },
+      {
+        text: {
+          en: "Bridged frontend and backend teams to ship end-to-end features together.",
+          de: "Verband Frontend- und Backend-Teams, um Features gemeinsam end-to-end auszuliefern.",
+        },
+        personas: ["software"],
+      },
+      {
+        text: {
+          en: "Ran event-driven integrations on Apache Kafka, Camel, and NiFi.",
+          de: "Betrieb ereignisgesteuerte Integrationen mit Apache Kafka, Camel und NiFi.",
+        },
+        personas: ["software"],
+      },
+      {
+        text: {
+          en: "Wrote the SQL and the JPA — PostgreSQL persistence, done properly.",
+          de: "Schrieb das SQL und das JPA — PostgreSQL-Persistenz, ordentlich gemacht.",
+        },
+        personas: ["software"],
+      },
+      {
+        text: {
+          en: "Unit and integration tests, defect triage, code review — the unglamorous stuff that keeps prod calm.",
+          de: "Unit- und Integrationstests, Fehleranalyse, Code-Reviews — die unglamouröse Arbeit, die die Produktion ruhig hält.",
+        },
+        personas: ["software"],
+      },
+      {
+        text: {
+          en: "Agile, Git, Jenkins, Docker, Jira, CI/CD — the full enterprise toolbelt.",
+          de: "Agile, Git, Jenkins, Docker, Jira, CI/CD — der volle Enterprise-Werkzeuggürtel.",
+        },
+        personas: ["software"],
+      },
+    ],
+    skills: ["Java", "Spring Boot", "Spring WebFlux", "React", "HTML", "CSS", "Tailwind", "Storybook", "PostgreSQL", "MongoDB", "Apache Kafka", "Apache Camel", "Apache NiFi", "JUnit", "Mockito", "Cypress", "Karate", "Jest", "Docker", "Kubernetes", "Jenkins", "Sonar", "Snyk", "Git", "Jira", "Postman", "Swagger/OpenAPI", "RapidAPI", "JavaScript"],
+  },
+  {
+    id: "exp-drdo",
+    org: "Proof and Experimental Establishment Lab, DRDO",
+    role: { en: "Intern", de: "Praktikant" },
+    location: "Chandipur, India",
+    period: { en: "2022", de: "2022" },
+    personas: ["embedded", "software"],
+    blurb: {
+      en: "Pointed cameras at featureless terrain and asked machine learning to find coordinates anyway.",
+      de: "Richtete Kameras auf merkmalsloses Gelände und ließ Machine Learning trotzdem Koordinaten finden.",
+    },
+    bullets: [
+      {
+        text: {
+          en: "Extracted object coordinates from featureless terrain using photogrammetry, image processing, feature extraction, and camera calibration.",
+          de: "Extrahierte Objektkoordinaten aus merkmalslosem Gelände mittels Photogrammetrie, Bildverarbeitung, Feature-Extraktion und Kamerakalibrierung.",
+        },
+        personas: ["embedded"],
+      },
+      {
+        text: {
+          en: "Applied machine learning for analysis and optimization of the extracted data.",
+          de: "Wendete Machine Learning zur Analyse und Optimierung der extrahierten Daten an.",
+        },
+        personas: ["embedded", "software"],
+      },
+      {
+        text: {
+          en: "Tech stack: Python, PyTorch, OpenCV, Skimage, NumPy, Matplotlib.",
+          de: "Tech-Stack: Python, PyTorch, OpenCV, Skimage, NumPy, Matplotlib.",
+        },
+        personas: ["embedded", "software"],
+      },
+    ],
+    skills: ["Python", "PyTorch", "OpenCV", "Photogrammetry", "Camera Calibration", "NumPy", "Matplotlib"],
+  },
+];
+
+export const education: EducationEntry[] = [
+  {
+    id: "edu-tuc",
+    school: "Technische Universität Chemnitz",
+    degree: { en: "M.Sc., Automotive Software Engineering", de: "M.Sc., Automotive Software Engineering" },
+    location: "Chemnitz, Germany",
+    period: { en: "Oct 2025 – Present", de: "Okt. 2025 – heute" },
+    personas: ["embedded"],
+    detail: {
+      en: "Courses: Hardware Software Codesign, Embedded Systems, Hardware Development with VHDL, Automotive Software Engineering, Design of Software for Embedded Systems, Advanced Platforms for Automotive Systems, Automotive Sensor Systems, Neurocomputing, Realtime Systems.",
+      de: "Kurse: Hardware-Software-Codesign, Embedded Systems, Hardwareentwicklung mit VHDL, Automotive Software Engineering, Design von Software für eingebettete Systeme, fortgeschrittene Plattformen für Automobilsysteme, automobile Sensorsysteme, Neurocomputing, Echtzeitsysteme.",
+    },
+    skills: ["VHDL", "Embedded Systems", "Realtime Systems", "C"],
+  },
+  {
+    id: "edu-nitrkl",
+    school: "National Institute of Technology, Rourkela",
+    degree: {
+      en: "B.Tech., Electronics and Communication Engineering — Grade 1.6",
+      de: "B.Tech., Elektronik- und Nachrichtentechnik — Note 1.6",
+    },
+    location: "Rourkela, India",
+    period: { en: "June 2019 – May 2023", de: "Juni 2019 – Mai 2023" },
+    personas: ["embedded", "software"],
+    detail: {
+      en: "Thesis: IoT Interface For Real-Time Voltage Mode Pulse Oximetry Using FERN Stack.",
+      de: "Abschlussarbeit: IoT-Schnittstelle für Echtzeit-Spannungsmodus-Pulsoxymetrie mit dem FERN-Stack.",
+    },
+    skills: ["C++", "React", "Firebase"],
+  },
+];
+
+export const projects: ProjectEntry[] = [
+  {
+    id: "proj-raspnet",
+    name: "RASPNet — Multi-Node Ring Network Firmware",
+    period: { en: "May – Jul 2026", de: "Mai – Jul. 2026" },
+    personas: ["embedded"],
+    tagline: {
+      en: "Bare-metal C, zero dynamic memory, and a ring of ATmega328Ps arguing over a shared clock.",
+      de: "Bare-Metal-C, null dynamischer Speicher, und ein Ring aus ATmega328Ps, die sich über einen gemeinsamen Takt streiten.",
+    },
+    description: [
+      {
+        en: "Implemented a 3-layer bit-serial ring network protocol stack in C for the ATmega328P — custom framing, streaming CRC-32 validation, cut-through packet relaying.",
+        de: "Implementierte einen 3-Schicht-Bit-seriellen Ringnetzwerk-Protokollstack in C für den ATmega328P — eigenes Framing, Streaming-CRC-32-Validierung, Cut-Through-Paketweiterleitung.",
+      },
+      {
+        en: "Built ISR-driven bit-level clock/data synchronization with sliding-window preamble detection for reliable inter-node comms.",
+        de: "Baute ISR-gesteuerte Bit-Level-Takt-/Datensynchronisation mit Sliding-Window-Präambel-Erkennung für zuverlässige Inter-Node-Kommunikation.",
+      },
+      {
+        en: "Squeezed the SRAM footprint down by killing static buffers and redesigning ring-buffer memory management.",
+        de: "Reduzierte den SRAM-Fußabdruck durch Entfernen statischer Puffer und Neugestaltung der Ringpuffer-Speicherverwaltung.",
+      },
+      {
+        en: "Wrote a custom Python serial web terminal (SSE streaming, raw termios) for live protocol debugging across nodes.",
+        de: "Schrieb ein eigenes serielles Python-Web-Terminal (SSE-Streaming, raw termios) für Live-Protokoll-Debugging über alle Nodes.",
+      },
+    ],
+    skills: ["C", "AVR/ATmega328P", "ISR Programming", "Python"],
+    links: [{ label: "Code", href: "https://gitlab.hrz.tu-chemnitz.de/pokb-at-tu-chemnitz.de/embeddedlab" }],
+    featured: true,
+  },
+  {
+    id: "proj-oximetry",
+    name: "IoT Interface for Real-Time Voltage Mode Pulse Oximetry",
+    period: { en: "Apr 2023", de: "Apr. 2023" },
+    personas: ["embedded", "software"],
+    tagline: {
+      en: "A pulse oximeter that phones home — over WiFi, in real time.",
+      de: "Ein Pulsoximeter, das nach Hause telefoniert — über WLAN, in Echtzeit.",
+    },
+    description: [
+      {
+        en: "Built an IoT-enabled pulse oximeter with a low-power transimpedance amplifier for real-time SpO2 and heart-rate monitoring.",
+        de: "Baute ein IoT-fähiges Pulsoximeter mit stromsparendem Transimpedanzverstärker für Echtzeit-SpO2- und Herzfrequenzmessung.",
+      },
+      {
+        en: "Piped live sensor data into Firebase and rendered it in React for real-time visualization.",
+        de: "Leitete Live-Sensordaten in Firebase und stellte sie in React zur Echtzeitvisualisierung dar.",
+      },
+      {
+        en: "Handled the messy middle: software-hardware integration and high-frequency data acquisition.",
+        de: "Übernahm den unübersichtlichen Mittelteil: Software-Hardware-Integration und hochfrequente Datenerfassung.",
+      },
+    ],
+    skills: ["React", "Firebase", "C++"],
+    links: [
+      { label: "Firmware", href: "https://github.com/pbplop29/RPArduino" },
+      { label: "Website", href: "https://github.com/pbplop29/RPWebsite" },
+    ],
+    featured: true,
+  },
+  {
+    id: "proj-crowd",
+    name: "AI-Powered Crowd and Breach Detection System",
+    period: { en: "Apr 2022", de: "Apr. 2022" },
+    personas: ["embedded", "software"],
+    tagline: {
+      en: "92% detection accuracy — the other 8% just really wanted to test the alert system.",
+      de: "92% Erkennungsgenauigkeit — die restlichen 8% wollten einfach unbedingt das Alarmsystem testen.",
+    },
+    description: [
+      {
+        en: "Built a crowd and perimeter breach detection system with Python, OpenCV, and TensorFlow/PyTorch.",
+        de: "Baute ein System zur Erkennung von Menschenmengen und Perimeterverletzungen mit Python, OpenCV und TensorFlow/PyTorch.",
+      },
+      {
+        en: "Shipped a MERN-based UI with real-time anomaly detection and automated alerts.",
+        de: "Lieferte eine MERN-basierte UI mit Echtzeit-Anomalieerkennung und automatisierten Alarmen.",
+      },
+    ],
+    skills: ["Python", "OpenCV", "PyTorch", "React"],
+    featured: true,
+  },
+];
+
+export const personalProjects: L[] = [
+  { en: "Calorie Tracker", de: "Kalorien-Tracker" },
+  { en: "Expense Tracker", de: "Ausgaben-Tracker" },
+  { en: "Task Set Scheduler", de: "Task-Set-Scheduler" },
+  { en: "Flashcard Review System", de: "Karteikarten-Lernsystem" },
+  { en: "Phone Controlled Multimedia Interface for TV", de: "Handygesteuerte Multimedia-Schnittstelle fürs TV" },
+];
+
+export const skills: Skill[] = [
+  // OS
+  { name: "Linux", category: "OS", personas: ["software", "embedded"], sourceIds: ["proj-raspnet", "exp-lowes-ase"] },
+  { name: "MacOS", category: "OS", personas: ["software"], sourceIds: ["exp-lowes-ase"] },
+  { name: "Windows", category: "OS", personas: ["software"], sourceIds: ["exp-lowes-ase"] },
+
+  // Languages
+  { name: "Java", category: "Languages", personas: ["software"], sourceIds: ["exp-lowes-se", "exp-lowes-ase"] },
+  { name: "C", category: "Languages", personas: ["embedded"], sourceIds: ["proj-raspnet", "edu-tuc"] },
+  { name: "C++", category: "Languages", personas: ["embedded", "software"], sourceIds: ["edu-nitrkl", "proj-oximetry"] },
+  { name: "Python", category: "Languages", personas: ["software", "embedded"], sourceIds: ["exp-drdo", "proj-crowd", "proj-raspnet"] },
+  { name: "JavaScript", category: "Languages", personas: ["software"], sourceIds: ["exp-lowes-ase", "proj-oximetry", "proj-crowd"] },
+
+  // Backend
+  { name: "Spring Boot", category: "Backend", personas: ["software"], sourceIds: ["exp-lowes-se", "exp-lowes-ase"] },
+  { name: "Spring WebFlux", category: "Backend", personas: ["software"], sourceIds: ["exp-lowes-se", "exp-lowes-ase"] },
+  { name: "PostgreSQL", category: "Backend", personas: ["software"], sourceIds: ["exp-lowes-ase"] },
+  { name: "MongoDB", category: "Backend", personas: ["software"], sourceIds: ["exp-lowes-ase"] },
+
+  // Frontend
+  { name: "React", category: "Frontend", personas: ["software"], sourceIds: ["exp-lowes-ase", "proj-oximetry", "proj-crowd"] },
+  { name: "HTML", category: "Frontend", personas: ["software"], sourceIds: ["exp-lowes-ase"] },
+  { name: "CSS", category: "Frontend", personas: ["software"], sourceIds: ["exp-lowes-ase"] },
+  { name: "Tailwind", category: "Frontend", personas: ["software"], sourceIds: ["exp-lowes-ase"] },
+  { name: "Storybook", category: "Frontend", personas: ["software"], sourceIds: ["exp-lowes-ase"] },
+
+  // Testing
+  { name: "JUnit", category: "Testing", personas: ["software"], sourceIds: ["exp-lowes-ase"] },
+  { name: "Mockito", category: "Testing", personas: ["software"], sourceIds: ["exp-lowes-ase"] },
+  { name: "Cypress", category: "Testing", personas: ["software"], sourceIds: ["exp-lowes-ase"] },
+  { name: "Karate", category: "Testing", personas: ["software"], sourceIds: ["exp-lowes-ase"] },
+  { name: "Jest", category: "Testing", personas: ["software"], sourceIds: ["exp-lowes-ase"] },
+
+  // Messaging & Data
+  { name: "Apache Kafka", category: "Messaging & Data", personas: ["software"], sourceIds: ["exp-lowes-ase"] },
+  { name: "Apache Camel", category: "Messaging & Data", personas: ["software"], sourceIds: ["exp-lowes-ase"] },
+  { name: "Apache NiFi", category: "Messaging & Data", personas: ["software"], sourceIds: ["exp-lowes-ase", "exp-lowes-se"] },
+  { name: "Apache Superset", category: "Messaging & Data", personas: ["software"], sourceIds: ["exp-lowes-se"] },
+
+  // DevOps
+  { name: "Docker", category: "DevOps", personas: ["software"], sourceIds: ["exp-lowes-ase", "exp-lowes-se"] },
+  { name: "Kubernetes", category: "DevOps", personas: ["software"], sourceIds: ["exp-lowes-ase"] },
+  { name: "Jenkins", category: "DevOps", personas: ["software"], sourceIds: ["exp-lowes-ase", "exp-lowes-se"] },
+  { name: "Sonar", category: "DevOps", personas: ["software"], sourceIds: ["exp-lowes-ase"] },
+  { name: "Snyk", category: "DevOps", personas: ["software"], sourceIds: ["exp-lowes-ase"] },
+  { name: "Kibana", category: "DevOps", personas: ["software"], sourceIds: ["exp-lowes-se"] },
+  { name: "Grafana", category: "DevOps", personas: ["software"], sourceIds: ["exp-lowes-se"] },
+
+  // Tools
+  { name: "Jira", category: "Tools", personas: ["software"], sourceIds: ["exp-lowes-ase", "exp-lowes-se"] },
+  { name: "Postman", category: "Tools", personas: ["software"], sourceIds: ["exp-lowes-ase"] },
+  { name: "Swagger/OpenAPI", category: "Tools", personas: ["software"], sourceIds: ["exp-lowes-ase"] },
+  { name: "Git", category: "Tools", personas: ["software", "embedded"], sourceIds: ["exp-lowes-ase", "exp-lowes-se", "proj-raspnet"] },
+  { name: "RapidAPI", category: "Tools", personas: ["software"], sourceIds: ["exp-lowes-ase"] },
+
+  // Embedded & Hardware
+  { name: "VHDL", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["edu-tuc"] },
+  { name: "AVR/ATmega328P", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["proj-raspnet"] },
+  { name: "ISR Programming", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["proj-raspnet"] },
+  { name: "Photogrammetry", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["exp-drdo"] },
+  { name: "Camera Calibration", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["exp-drdo"] },
+  { name: "OpenCV", category: "Embedded & Hardware", personas: ["embedded", "software"], sourceIds: ["exp-drdo", "proj-crowd"] },
+  { name: "PyTorch", category: "Embedded & Hardware", personas: ["embedded", "software"], sourceIds: ["exp-drdo", "proj-crowd"] },
+  { name: "Firebase", category: "Embedded & Hardware", personas: ["embedded", "software"], sourceIds: ["proj-oximetry"] },
+];
+
+export const languages = [
+  { name: { en: "English", de: "Englisch" } as L, level: "C2" },
+  { name: { en: "German", de: "Deutsch" } as L, level: "B1" },
+];
