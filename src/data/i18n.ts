@@ -41,6 +41,10 @@ export const ui = {
     title: { en: "Education", de: "Ausbildung" } as L,
     languagesLabel: { en: "Languages", de: "Sprachen" } as L,
   },
+  interests: {
+    eyebrow: { en: "Off the clock", de: "Nach Feierabend" } as L,
+    title: { en: "Beyond the Terminal", de: "Abseits vom Terminal" } as L,
+  },
   resumeSection: {
     heading: { en: "Want the PDF version?", de: "Lieber die PDF-Version?" } as L,
     subtext: {
@@ -58,6 +62,8 @@ export const ui = {
     } as L,
     email: { en: "Email", de: "E-Mail" } as L,
     phone: { en: "Phone", de: "Telefon" } as L,
+    copyDiscord: { en: "Click to copy", de: "Klicken zum Kopieren" } as L,
+    copied: { en: "Copied!", de: "Kopiert!" } as L,
   },
   filterBar: {
     tracing: { en: "Tracing", de: "Verfolge" } as L,

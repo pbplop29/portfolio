@@ -93,8 +93,24 @@ export const profile = {
   phone: "+49 1633922349",
   linkedin: "https://linkedin.com/in/biplov-nitrkl",
   github: "https://github.com/pbplop29",
+  discord: "kominatchuu",
+  steam: "sakuni_thoplo",
+  steamUrl: "https://steamcommunity.com/id/sakuni_thoplo",
   resumeUrl: "/resume/Biplov_Pokhrel.pdf",
 };
+
+export interface Interest {
+  emoji: string;
+  label: L;
+}
+
+export const interests: Interest[] = [
+  { emoji: "📷", label: { en: "Photography", de: "Fotografie" } },
+  { emoji: "🎨", label: { en: "Painting", de: "Malerei" } },
+  { emoji: "🎮", label: { en: "Video Games", de: "Videospiele" } },
+  { emoji: "🏓", label: { en: "Table Tennis", de: "Tischtennis" } },
+  { emoji: "🥾", label: { en: "Hiking", de: "Wandern" } },
+];
 
 export const experience: ExperienceEntry[] = [
   {
@@ -162,6 +178,8 @@ export const experience: ExperienceEntry[] = [
     skills: ["Java", "Spring Boot", "Spring WebFlux", "Apache NiFi", "Apache Superset", "Kibana", "Grafana", "Git", "Jira", "Jenkins", "Docker"],
     documents: [
       { label: { en: "Experience Letter", de: "Arbeitszeugnis" }, file: "/docs/lowes-experience-letter.pdf" },
+      { label: { en: "Spot Award", de: "Spot Award" }, file: "/docs/lowes-spot-award-certificate.pdf" },
+      { label: { en: "Table Tennis Certificate", de: "Tischtennis-Zertifikat" }, file: "/docs/lowes-table-tennis-certificate.pdf" },
     ],
   },
   {
@@ -236,6 +254,8 @@ export const experience: ExperienceEntry[] = [
     skills: ["Java", "Spring Boot", "Spring WebFlux", "React", "HTML", "CSS", "Tailwind", "Storybook", "PostgreSQL", "MongoDB", "Apache Kafka", "Apache Camel", "Apache NiFi", "JUnit", "Mockito", "Cypress", "Karate", "Jest", "Docker", "Kubernetes", "Jenkins", "Sonar", "Snyk", "Git", "Jira", "Postman", "Swagger/OpenAPI", "RapidAPI", "JavaScript"],
     documents: [
       { label: { en: "Experience Letter", de: "Arbeitszeugnis" }, file: "/docs/lowes-experience-letter.pdf" },
+      { label: { en: "Spot Award", de: "Spot Award" }, file: "/docs/lowes-spot-award-certificate.pdf" },
+      { label: { en: "Table Tennis Certificate", de: "Tischtennis-Zertifikat" }, file: "/docs/lowes-table-tennis-certificate.pdf" },
     ],
   },
   {
