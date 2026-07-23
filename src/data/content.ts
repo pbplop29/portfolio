@@ -390,6 +390,37 @@ export const projects: ProjectEntry[] = [
     skills: ["Python", "OpenCV", "PyTorch", "React"],
     featured: true,
   },
+  {
+    id: "proj-tvcast",
+    name: "TVCast — LAN Media Remote & Vocab Trainer",
+    period: { en: "2026", de: "2026" },
+    personas: ["software"],
+    tagline: {
+      en: "Turns any phone on the LAN into a TV remote — and idle downtime into a vocab pop quiz.",
+      de: "Verwandelt jedes Handy im LAN in eine Fernbedienung — und Leerlaufzeiten in ein Vokabel-Quiz.",
+    },
+    description: [
+      {
+        en: "Built a self-hosted media remote that lets any phone on the LAN control a desktop's video playback — search, queue, seek, volume — in real time, using FastAPI and WebSockets to broadcast playback state at 1Hz with zero page reloads.",
+        de: "Baute eine selbst gehostete Medienfernbedienung, mit der jedes Handy im LAN die Videowiedergabe eines Desktops steuert — Suche, Warteschlange, Spulen, Lautstärke — in Echtzeit über FastAPI und WebSockets, die den Wiedergabestatus mit 1Hz an alle Clients senden, ganz ohne Neuladen der Seite.",
+      },
+      {
+        en: "Designed a stateful queue model on top of mpv's native playlist, distinguishing ad-hoc \"play now\" entries from persistent queued ones, driven entirely over mpv's local JSON IPC socket with blocking I/O offloaded to worker threads.",
+        de: "Entwarf ein zustandsbehaftetes Warteschlangenmodell auf Basis der nativen mpv-Playlist, das spontane \"jetzt abspielen\"-Einträge von dauerhaft eingereihten trennt — gesteuert über mpv's lokalen JSON-IPC-Socket, mit blockierendem I/O ausgelagert auf Worker-Threads.",
+      },
+      {
+        en: "Implemented a German vocabulary flashcard game that auto-activates whenever the queue goes idle, rendered straight onto the TV via mpv's OSD/ASS overlay, complete with a persistent multiplayer leaderboard and PIN-gated API access.",
+        de: "Implementierte ein deutsches Vokabel-Karteikarten-Spiel, das sich automatisch aktiviert, sobald die Warteschlange leerläuft — direkt auf den Fernseher gerendert über mpv's OSD/ASS-Overlay, inklusive persistenter Mehrspieler-Bestenliste und PIN-geschütztem API-Zugriff.",
+      },
+      {
+        en: "Shipped as a single-file Python backend with an embedded vanilla JS/HTML/CSS frontend — no build step, no framework — with config and secrets externalized via environment variables for public release.",
+        de: "Ausgeliefert als Single-File-Python-Backend mit eingebettetem Vanilla-JS/HTML/CSS-Frontend — kein Build-Schritt, kein Framework — mit Konfiguration und Secrets ausgelagert in Umgebungsvariablen für die öffentliche Veröffentlichung.",
+      },
+    ],
+    skills: ["Python", "FastAPI", "WebSockets", "mpv", "yt-dlp"],
+    links: [{ label: "Code", href: "https://github.com/pbplop29/tvcast" }],
+    featured: true,
+  },
 ];
 
 export const personalProjects: L[] = [
@@ -397,7 +428,6 @@ export const personalProjects: L[] = [
   { en: "Expense Tracker", de: "Ausgaben-Tracker" },
   { en: "Task Set Scheduler", de: "Task-Set-Scheduler" },
   { en: "Flashcard Review System", de: "Karteikarten-Lernsystem" },
-  { en: "Phone Controlled Multimedia Interface for TV", de: "Handygesteuerte Multimedia-Schnittstelle fürs TV" },
 ];
 
 export const skills: Skill[] = [
@@ -410,10 +440,12 @@ export const skills: Skill[] = [
   { name: "Java", category: "Languages", personas: ["software"], sourceIds: ["exp-lowes-se", "exp-lowes-ase"] },
   { name: "C", category: "Languages", personas: ["embedded"], sourceIds: ["proj-raspnet", "edu-tuc"] },
   { name: "C++", category: "Languages", personas: ["embedded", "software"], sourceIds: ["edu-nitrkl", "proj-oximetry"] },
-  { name: "Python", category: "Languages", personas: ["software", "embedded"], sourceIds: ["exp-drdo", "proj-crowd", "proj-raspnet"] },
+  { name: "Python", category: "Languages", personas: ["software", "embedded"], sourceIds: ["exp-drdo", "proj-crowd", "proj-raspnet", "proj-tvcast"] },
   { name: "JavaScript", category: "Languages", personas: ["software"], sourceIds: ["exp-lowes-ase", "proj-oximetry", "proj-crowd"] },
 
   // Backend
+  { name: "FastAPI", category: "Backend", personas: ["software"], sourceIds: ["proj-tvcast"] },
+  { name: "WebSockets", category: "Backend", personas: ["software"], sourceIds: ["proj-tvcast"] },
   { name: "Spring Boot", category: "Backend", personas: ["software"], sourceIds: ["exp-lowes-se", "exp-lowes-ase"] },
   { name: "Spring WebFlux", category: "Backend", personas: ["software"], sourceIds: ["exp-lowes-se", "exp-lowes-ase"] },
   { name: "PostgreSQL", category: "Backend", personas: ["software"], sourceIds: ["exp-lowes-ase"] },
@@ -454,6 +486,8 @@ export const skills: Skill[] = [
   { name: "Swagger/OpenAPI", category: "Tools", personas: ["software"], sourceIds: ["exp-lowes-ase"] },
   { name: "Git", category: "Tools", personas: ["software", "embedded"], sourceIds: ["exp-lowes-ase", "exp-lowes-se", "proj-raspnet"] },
   { name: "RapidAPI", category: "Tools", personas: ["software"], sourceIds: ["exp-lowes-ase"] },
+  { name: "mpv", category: "Tools", personas: ["software"], sourceIds: ["proj-tvcast"] },
+  { name: "yt-dlp", category: "Tools", personas: ["software"], sourceIds: ["proj-tvcast"] },
 
   // Embedded & Hardware
   { name: "Hardware Software Codesign", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["edu-tuc"] },
