@@ -131,31 +131,41 @@ export default function Hero() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 0.94, rotate: -2 }}
+          animate={{ opacity: 1, scale: 1, rotate: -2 }}
           transition={{ delay: 0.25, duration: 0.5 }}
           className="relative flex-none"
         >
           <div
             className={cn(
-              "absolute -inset-3 rounded-full blur-2xl transition-colors duration-700",
-              persona === "software" ? "bg-software/25" : "bg-embedded/25"
+              "absolute -inset-4 rounded-[2rem] blur-2xl transition-colors duration-700",
+              persona === "software" ? "bg-software/20" : "bg-embedded/20"
             )}
           />
           <div
             className={cn(
-              "relative h-36 w-36 overflow-hidden rounded-full border-2 transition-colors duration-500 sm:h-44 sm:w-44",
+              "relative w-40 overflow-hidden rounded-2xl border-2 bg-ink-900 shadow-2xl transition-colors duration-500 sm:w-52",
               persona === "software" ? "border-software" : "border-embedded"
             )}
           >
-            <Image
-              src="/images/photo.jpg"
-              alt="Biplov Pokhrel"
-              fill
-              sizes="176px"
-              priority
-              className="object-cover"
-            />
+            <div className="relative aspect-[3/4] w-full">
+              <Image
+                src="/images/photo.jpg"
+                alt="Biplov Pokhrel"
+                fill
+                sizes="(min-width: 640px) 208px, 160px"
+                priority
+                className="object-cover"
+              />
+            </div>
+            <div
+              className={cn(
+                "absolute bottom-0 left-0 right-0 flex items-center justify-center gap-1.5 py-1.5 font-mono text-[11px] font-semibold text-ink-950 transition-colors duration-500",
+                persona === "software" ? "bg-software" : "bg-embedded"
+              )}
+            >
+              {persona === "software" ? "💻 build mode" : "⚙️ debug mode"}
+            </div>
           </div>
         </motion.div>
       </div>
