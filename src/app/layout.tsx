@@ -18,7 +18,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Biplov Pokhrel — Software & Embedded Engineer",
+  title: "Biplov Pokhrel",
   description:
     "Biplov Pokhrel — Software Engineer at Lowe's turned Automotive Software Engineering student. Backend systems, embedded firmware, and everything in between.",
 };

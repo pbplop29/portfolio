@@ -158,14 +158,6 @@ export default function Hero() {
                 className="object-cover"
               />
             </div>
-            <div
-              className={cn(
-                "absolute bottom-0 left-0 right-0 flex items-center justify-center gap-1.5 py-1.5 font-mono text-[11px] font-semibold text-ink-950 transition-colors duration-500",
-                persona === "software" ? "bg-software" : "bg-embedded"
-              )}
-            >
-              {persona === "software" ? "💻 build mode" : "⚙️ debug mode"}
-            </div>
           </div>
         </motion.div>
       </div>
