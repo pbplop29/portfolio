@@ -7,6 +7,7 @@ import { useFilter } from "@/context/FilterContext";
 import { useLanguage } from "@/context/LanguageContext";
 import { cn } from "@/lib/utils";
 import SkillPill from "./SkillPill";
+import DocLink from "./DocLink";
 
 export default function ExperienceCard({ entry }: { entry: ExperienceEntry }) {
   const { persona } = usePersona();
@@ -67,6 +68,14 @@ export default function ExperienceCard({ entry }: { entry: ExperienceEntry }) {
           <SkillPill key={s} name={s} />
         ))}
       </div>
+
+      {entry.documents && entry.documents.length > 0 && (
+        <div className="mt-4 flex flex-wrap gap-2 border-t border-dashed border-ink-800 pt-4">
+          {entry.documents.map((d) => (
+            <DocLink key={d.file} label={d.label} file={d.file} />
+          ))}
+        </div>
+      )}
     </motion.div>
   );
 }

@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap } from "lucide-react";
+import { GraduationCap, FileText } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 import SkillPill from "./SkillPill";
+import DocLink from "./DocLink";
 import { education, languages } from "@/data/content";
 import { usePersona } from "@/context/PersonaContext";
 import { useFilter } from "@/context/FilterContext";
@@ -62,6 +63,13 @@ export default function Education() {
                       <SkillPill key={s} name={s} />
                     ))}
                   </div>
+                  {e.documents && e.documents.length > 0 && (
+                    <div className="mt-4 flex flex-wrap gap-2 border-t border-dashed border-ink-800 pt-4">
+                      {e.documents.map((d) => (
+                        <DocLink key={d.file} label={d.label} file={d.file} />
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             </motion.div>
@@ -82,9 +90,21 @@ export default function Education() {
         {languages.map((l) => (
           <span
             key={l.name.en}
-            className="rounded-full border border-ink-700 px-3 py-1 text-xs text-ink-300"
+            className="inline-flex items-center gap-1.5 rounded-full border border-ink-700 px-3 py-1 text-xs text-ink-300"
           >
             {l.name[lang]} · {l.level}
+            {l.documents?.map((d) => (
+              <a
+                key={d.file}
+                href={d.file}
+                target="_blank"
+                rel="noreferrer"
+                title={d.label[lang]}
+                className="text-ink-500 transition-colors hover:text-ink-300"
+              >
+                <FileText size={12} />
+              </a>
+            ))}
           </span>
         ))}
       </motion.div>

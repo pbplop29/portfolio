@@ -26,6 +26,11 @@ export interface Bullet {
   personas: Persona[];
 }
 
+export interface DocumentLink {
+  label: L;
+  file: string;
+}
+
 export interface ExperienceEntry {
   id: string;
   org: string;
@@ -36,6 +41,7 @@ export interface ExperienceEntry {
   blurb: L;
   bullets: Bullet[];
   skills: string[];
+  documents?: DocumentLink[];
 }
 
 export interface EducationEntry {
@@ -47,6 +53,7 @@ export interface EducationEntry {
   personas: Persona[];
   detail: L;
   skills: string[];
+  documents?: DocumentLink[];
 }
 
 export interface ProjectLink {
@@ -153,6 +160,9 @@ export const experience: ExperienceEntry[] = [
       },
     ],
     skills: ["Java", "Spring Boot", "Spring WebFlux", "Apache NiFi", "Apache Superset", "Kibana", "Grafana", "Git", "Jira", "Jenkins", "Docker"],
+    documents: [
+      { label: { en: "Experience Letter", de: "Arbeitszeugnis" }, file: "/docs/lowes-experience-letter.pdf" },
+    ],
   },
   {
     id: "exp-lowes-ase",
@@ -224,6 +234,9 @@ export const experience: ExperienceEntry[] = [
       },
     ],
     skills: ["Java", "Spring Boot", "Spring WebFlux", "React", "HTML", "CSS", "Tailwind", "Storybook", "PostgreSQL", "MongoDB", "Apache Kafka", "Apache Camel", "Apache NiFi", "JUnit", "Mockito", "Cypress", "Karate", "Jest", "Docker", "Kubernetes", "Jenkins", "Sonar", "Snyk", "Git", "Jira", "Postman", "Swagger/OpenAPI", "RapidAPI", "JavaScript"],
+    documents: [
+      { label: { en: "Experience Letter", de: "Arbeitszeugnis" }, file: "/docs/lowes-experience-letter.pdf" },
+    ],
   },
   {
     id: "exp-drdo",
@@ -260,6 +273,9 @@ export const experience: ExperienceEntry[] = [
       },
     ],
     skills: ["Python", "PyTorch", "OpenCV", "Photogrammetry", "Camera Calibration", "NumPy", "Matplotlib"],
+    documents: [
+      { label: { en: "Internship Certificate", de: "Praktikumszertifikat" }, file: "/docs/drdo-internship-certificate.pdf" },
+    ],
   },
 ];
 
@@ -287,6 +303,9 @@ export const education: EducationEntry[] = [
       "Realtime Systems",
       "C",
     ],
+    documents: [
+      { label: { en: "Transcript", de: "Notenübersicht" }, file: "/docs/msc-transcript.pdf" },
+    ],
   },
   {
     id: "edu-nitrkl",
@@ -303,6 +322,11 @@ export const education: EducationEntry[] = [
       de: "Abschlussarbeit: IoT-Schnittstelle für Echtzeit-Spannungsmodus-Pulsoxymetrie mit dem FERN-Stack.",
     },
     skills: ["C++", "React", "Firebase"],
+    documents: [
+      { label: { en: "Degree", de: "Urkunde" }, file: "/docs/btech-degree.pdf" },
+      { label: { en: "Migration Certificate", de: "Migrationszertifikat" }, file: "/docs/btech-migration-certificate.pdf" },
+      { label: { en: "Transcript", de: "Notenübersicht" }, file: "/docs/btech-transcript.pdf" },
+    ],
   },
 ];
 
@@ -508,7 +532,11 @@ export const skills: Skill[] = [
   { name: "Firebase", category: "Embedded & Hardware", personas: ["embedded", "software"], sourceIds: ["proj-oximetry"] },
 ];
 
-export const languages = [
-  { name: { en: "English", de: "Englisch" } as L, level: "C2" },
-  { name: { en: "German", de: "Deutsch" } as L, level: "B1" },
+export const languages: { name: L; level: string; documents?: DocumentLink[] }[] = [
+  {
+    name: { en: "English", de: "Englisch" },
+    level: "C2",
+    documents: [{ label: { en: "IELTS Certificate", de: "IELTS-Zertifikat" }, file: "/docs/ielts-certificate.pdf" }],
+  },
+  { name: { en: "German", de: "Deutsch" }, level: "B1" },
 ];
