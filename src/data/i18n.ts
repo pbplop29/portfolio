@@ -17,10 +17,6 @@ export const ui = {
   experience: {
     eyebrow: { en: "Track record", de: "Werdegang" } as L,
     title: { en: "Experience", de: "Erfahrung" } as L,
-    note: {
-      en: "Every bullet below is tagged to real skills — click any skill chip to see where else it shows up.",
-      de: "Jeder Punkt unten ist mit echten Skills verknüpft — klick auf einen Skill-Chip, um zu sehen, wo er sonst noch vorkommt.",
-    } as L,
   },
   skills: {
     eyebrow: { en: "Toolbox", de: "Werkzeugkasten" } as L,
@@ -57,8 +53,8 @@ export const ui = {
     eyebrow: { en: "Let's talk", de: "Lass uns reden" } as L,
     title: { en: "Get in touch", de: "Kontakt aufnehmen" } as L,
     note: {
-      en: "Open to opportunities on both sides of the toggle — backend systems or embedded/automotive software. Or just say hi.",
-      de: "Offen für Möglichkeiten auf beiden Seiten des Schalters — Backend-Systeme oder Embedded-/Automotive-Software. Oder sag einfach Hallo.",
+      en: "Open to opportunities on both sides of the toggle — backend systems or automotive software. Or just say hi.",
+      de: "Offen für Möglichkeiten auf beiden Seiten des Schalters — Backend-Systeme oder Automotive-Software. Oder sag einfach Hallo.",
     } as L,
     email: { en: "Email", de: "E-Mail" } as L,
     phone: { en: "Phone", de: "Telefon" } as L,
@@ -81,6 +77,6 @@ export const categoryLabels: Record<SkillCategory, L> = {
   "Messaging & Data": { en: "Messaging & Data", de: "Messaging & Daten" },
   DevOps: { en: "DevOps", de: "DevOps" },
   Tools: { en: "Tools", de: "Werkzeuge" },
-  "Embedded & Hardware": { en: "Embedded & Hardware", de: "Embedded & Hardware" },
+  "Embedded & Hardware": { en: "Automotive & Embedded", de: "Automotive & Embedded" },
   OS: { en: "OS", de: "Betriebssystem" },
 };

@@ -26,7 +26,6 @@ export default function Experience() {
       <SectionHeading
         eyebrow={ui.experience.eyebrow[lang]}
         title={ui.experience.title[lang]}
-        note={ui.experience.note[lang]}
       />
       <ActiveFilterBar />
       <div className="space-y-6">

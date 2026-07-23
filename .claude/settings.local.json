@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(mkdir -p /home/kom/Projects/portfolio/.claude)"
+      "Bash(mkdir -p /home/kom/Projects/portfolio/.claude)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)"
     ]
   }
 }

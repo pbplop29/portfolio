@@ -74,8 +74,8 @@ export const profile = {
     de: "Backend-Entwickler, der ausliefert, reviewt und sich gelegentlich mit Kafka streitet.",
   } as L,
   taglineEmbedded: {
-    en: "Currently trading REST APIs for register maps and interrupt vectors.",
-    de: "Tauscht gerade REST-APIs gegen Registerkarten und Interrupt-Vektoren ein.",
+    en: "Currently trading REST APIs for CAN buses and interrupt vectors.",
+    de: "Tauscht gerade REST-APIs gegen CAN-Busse und Interrupt-Vektoren ein.",
   } as L,
   heroIntro: {
     en: "Software Engineer out of Bangalore, now doing a master's in Automotive Software Engineering in Chemnitz. I write backend systems and, lately, code that talks directly to silicon. Flip the toggle up top — same person, different register.",
@@ -275,7 +275,18 @@ export const education: EducationEntry[] = [
       en: "Courses: Hardware Software Codesign, Embedded Systems, Hardware Development with VHDL, Automotive Software Engineering, Design of Software for Embedded Systems, Advanced Platforms for Automotive Systems, Automotive Sensor Systems, Neurocomputing, Realtime Systems.",
       de: "Kurse: Hardware-Software-Codesign, Embedded Systems, Hardwareentwicklung mit VHDL, Automotive Software Engineering, Design von Software für eingebettete Systeme, fortgeschrittene Plattformen für Automobilsysteme, automobile Sensorsysteme, Neurocomputing, Echtzeitsysteme.",
     },
-    skills: ["VHDL", "Embedded Systems", "Realtime Systems", "C"],
+    skills: [
+      "Hardware Software Codesign",
+      "Embedded Systems",
+      "VHDL",
+      "Automotive Software Engineering",
+      "Design of Software for Embedded Systems",
+      "Advanced Platforms for Automotive Systems",
+      "Automotive Sensor Systems",
+      "Neurocomputing",
+      "Realtime Systems",
+      "C",
+    ],
   },
   {
     id: "edu-nitrkl",
@@ -445,7 +456,15 @@ export const skills: Skill[] = [
   { name: "RapidAPI", category: "Tools", personas: ["software"], sourceIds: ["exp-lowes-ase"] },
 
   // Embedded & Hardware
+  { name: "Hardware Software Codesign", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["edu-tuc"] },
+  { name: "Embedded Systems", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["edu-tuc"] },
   { name: "VHDL", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["edu-tuc"] },
+  { name: "Automotive Software Engineering", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["edu-tuc"] },
+  { name: "Design of Software for Embedded Systems", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["edu-tuc"] },
+  { name: "Advanced Platforms for Automotive Systems", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["edu-tuc"] },
+  { name: "Automotive Sensor Systems", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["edu-tuc"] },
+  { name: "Neurocomputing", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["edu-tuc"] },
+  { name: "Realtime Systems", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["edu-tuc"] },
   { name: "AVR/ATmega328P", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["proj-raspnet"] },
   { name: "ISR Programming", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["proj-raspnet"] },
   { name: "Photogrammetry", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["exp-drdo"] },

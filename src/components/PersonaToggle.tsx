@@ -48,7 +48,7 @@ export default function PersonaToggle({ compact = false }: { compact?: boolean }
           persona === "embedded" ? "text-ink-950" : "text-ink-300 hover:text-ink-100"
         )}
       >
-        ⚙️ Embedded
+        🚗 Automotive
       </button>
     </div>
   );
