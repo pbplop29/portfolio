@@ -41,7 +41,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[92vh] flex-col justify-center overflow-hidden px-6 pt-24"
+      className="relative flex min-h-[92vh] flex-col justify-center overflow-hidden px-6 pb-6 pt-24 sm:pb-20"
     >
       <div className="pointer-events-none absolute inset-0 circuit-bg opacity-40" />
       <div
@@ -71,7 +71,7 @@ export default function Hero() {
             {profile.name}
           </motion.h1>
 
-          <div className="mt-5 h-8 font-mono text-base text-ink-300 sm:text-lg">
+          <div className="mt-5 min-h-8 font-mono text-base text-ink-300 sm:text-lg">
             <AnimatePresence mode="wait">
               <motion.div
                 key={persona}
@@ -166,7 +166,7 @@ export default function Hero() {
         href="#experience"
         animate={{ y: [0, 8, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-ink-500 hover:text-ink-300"
+        className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 text-ink-500 hover:text-ink-300 sm:block"
         aria-label="Scroll down"
       >
         <ChevronDown size={22} />
