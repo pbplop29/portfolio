@@ -346,6 +346,7 @@ export const education: EducationEntry[] = [
       { label: { en: "Degree", de: "Urkunde" }, file: "/docs/btech-degree.pdf" },
       { label: { en: "Migration Certificate", de: "Migrationszertifikat" }, file: "/docs/btech-migration-certificate.pdf" },
       { label: { en: "Transcript", de: "Notenübersicht" }, file: "/docs/btech-transcript.pdf" },
+      { label: { en: "Thesis", de: "Abschlussarbeit" }, file: "/docs/btech-thesis.pdf" },
     ],
   },
 ];

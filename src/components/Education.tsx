@@ -100,7 +100,7 @@ export default function Education() {
                 target="_blank"
                 rel="noreferrer"
                 title={d.label[lang]}
-                className="text-ink-500 transition-colors hover:text-ink-300"
+                className="text-ink-300 transition-colors hover:text-ink-50"
               >
                 <FileText size={12} />
               </a>
