@@ -466,6 +466,37 @@ export const projects: ProjectEntry[] = [
     links: [{ label: "Code", href: "https://github.com/pbplop29/tvcast" }],
     featured: true,
   },
+  {
+    id: "proj-sensor-paper",
+    name: "Evaluation of Magnetic Rotor Position Sensors for PMSM Control in EVs",
+    period: { en: "2026", de: "2026" },
+    personas: ["embedded"],
+    tagline: {
+      en: "A deep dive into how an EV knows which way its motor is spinning — and what it costs to know that precisely.",
+      de: "Eine Tiefenanalyse, woher ein E-Auto weiß, in welche Richtung sich sein Motor dreht — und was es kostet, das präzise zu wissen.",
+    },
+    description: [
+      {
+        en: "Co-authored a review comparing Hall-effect, AMR, and GMR magnetic rotor position sensors for PMSM drives in electric vehicles, centered on Field-Oriented Control accuracy and torque-ripple mitigation.",
+        de: "Ko-Autor einer Review-Arbeit, die Hall-Effekt-, AMR- und GMR-Rotorpositionssensoren für PMSM-Antriebe in Elektrofahrzeugen vergleicht, mit Fokus auf feldorientierte Regelung und die Reduktion von Drehmomentwelligkeit.",
+      },
+      {
+        en: "Built a full comparative analysis across sensitivity, angular precision, temperature tolerance, air-gap range, and cost for each sensing technology.",
+        de: "Erstellte eine vollständige Vergleichsanalyse zu Sensitivität, Winkelgenauigkeit, Temperaturtoleranz, Luftspaltbereich und Kosten für jede Sensortechnologie.",
+      },
+      {
+        en: "Evaluated automotive-grade robustness under EMI, extreme temperatures, sensor misalignment, and low-speed/standstill operation.",
+        de: "Bewertete die automobiltaugliche Robustheit unter EMI, extremen Temperaturen, Sensor-Fehlausrichtung und Betrieb bei niedriger Drehzahl bzw. Stillstand.",
+      },
+      {
+        en: "Surveyed emerging directions — sensorless control, adaptive observers, and machine-learning-based rotor position estimation — as future research paths.",
+        de: "Untersuchte aufkommende Richtungen — sensorlose Regelung, adaptive Beobachter und ML-basierte Rotorpositionsschätzung — als zukünftige Forschungsrichtungen.",
+      },
+    ],
+    skills: ["Automotive Sensor Systems", "Neurocomputing"],
+    links: [{ label: "Read Paper", href: "/docs/automotive-sensor-systems-paper.pdf" }],
+    featured: true,
+  },
 ];
 
 export const personalProjects: L[] = [
@@ -541,8 +572,8 @@ export const skills: Skill[] = [
   { name: "Automotive Software Engineering", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["edu-tuc"] },
   { name: "Design of Software for Embedded Systems", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["edu-tuc"] },
   { name: "Advanced Platforms for Automotive Systems", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["edu-tuc"] },
-  { name: "Automotive Sensor Systems", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["edu-tuc"] },
-  { name: "Neurocomputing", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["edu-tuc"] },
+  { name: "Automotive Sensor Systems", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["edu-tuc", "proj-sensor-paper"] },
+  { name: "Neurocomputing", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["edu-tuc", "proj-sensor-paper"] },
   { name: "Realtime Systems", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["edu-tuc"] },
   { name: "AVR/ATmega328P", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["proj-raspnet"] },
   { name: "ISR Programming", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["proj-raspnet"] },
