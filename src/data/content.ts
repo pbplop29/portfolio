@@ -353,6 +353,37 @@ export const education: EducationEntry[] = [
 
 export const projects: ProjectEntry[] = [
   {
+    id: "proj-canbusdrive",
+    name: "CANbusDrive — Multi-ECU CAN Bus Vehicle Simulator",
+    period: { en: "2026", de: "2026" },
+    personas: ["embedded"],
+    tagline: {
+      en: "A racing game where the \"engine\" is three ECUs arguing over a CAN bus.",
+      de: "Ein Rennspiel, dessen „Motor\" eigentlich drei ECUs sind, die sich über einen CAN-Bus streiten.",
+    },
+    description: [
+      {
+        en: "Built a 3-ECU automotive network — Input, Powertrain, Dashboard — communicating over a virtual CAN bus, mirroring real vehicle electronics architecture end to end.",
+        de: "Baute ein automobiles 3-ECU-Netzwerk — Input, Powertrain, Dashboard — das über einen virtuellen CAN-Bus kommuniziert und die Architektur echter Fahrzeugelektronik end-to-end nachbildet.",
+      },
+      {
+        en: "Defined every message through a DBC database (the industry-standard automotive signal format) and encoded/decoded it with python-can and cantools.",
+        de: "Definierte jede Nachricht über eine DBC-Datenbank (das automobile Industriestandardformat für Signale) und kodierte/dekodierte sie mit python-can und cantools.",
+      },
+      {
+        en: "Mapped Xbox controller input (triggers, stick) to throttle/brake/steering signals driving a simplified longitudinal physics model — acceleration, drag, speed-derived RPM — at a 20Hz ECU tick rate.",
+        de: "Bildete Xbox-Controller-Eingaben (Trigger, Stick) auf Gas-/Brems-/Lenksignale ab, die ein vereinfachtes Längsdynamik-Modell — Beschleunigung, Luftwiderstand, geschwindigkeitsabhängige Drehzahl — mit 20Hz ECU-Taktrate antreiben.",
+      },
+      {
+        en: "Applied hardware-level CAN ID filtering so the Powertrain ECU wakes only on relevant frames, with the full pipeline visualized live through a Pygame-rendered dashboard.",
+        de: "Wendete Hardware-CAN-ID-Filterung an, sodass die Powertrain-ECU nur bei relevanten Frames aufwacht, mit der gesamten Pipeline live visualisiert über ein Pygame-gerendertes Dashboard.",
+      },
+    ],
+    skills: ["Python", "CAN Bus", "Embedded Systems"],
+    links: [{ label: "Code", href: "https://github.com/pbplop29/canbusdrive" }],
+    featured: true,
+  },
+  {
     id: "proj-raspnet",
     name: "RASPNet — Multi-Node Ring Network Firmware",
     period: { en: "May – Jul 2026", de: "Mai – Jul. 2026" },
@@ -516,7 +547,7 @@ export const skills: Skill[] = [
   { name: "Java", category: "Languages", personas: ["software"], sourceIds: ["exp-lowes-se", "exp-lowes-ase"] },
   { name: "C", category: "Languages", personas: ["embedded"], sourceIds: ["proj-raspnet", "edu-tuc"] },
   { name: "C++", category: "Languages", personas: ["embedded", "software"], sourceIds: ["edu-nitrkl", "proj-oximetry"] },
-  { name: "Python", category: "Languages", personas: ["software", "embedded"], sourceIds: ["exp-drdo", "proj-crowd", "proj-raspnet", "proj-tvcast"] },
+  { name: "Python", category: "Languages", personas: ["software", "embedded"], sourceIds: ["exp-drdo", "proj-crowd", "proj-raspnet", "proj-tvcast", "proj-canbusdrive"] },
   { name: "JavaScript", category: "Languages", personas: ["software"], sourceIds: ["exp-lowes-ase", "proj-oximetry", "proj-crowd"] },
 
   // Backend
@@ -567,7 +598,8 @@ export const skills: Skill[] = [
 
   // Embedded & Hardware
   { name: "Hardware Software Codesign", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["edu-tuc"] },
-  { name: "Embedded Systems", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["edu-tuc"] },
+  { name: "Embedded Systems", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["edu-tuc", "proj-canbusdrive"] },
+  { name: "CAN Bus", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["proj-canbusdrive"] },
   { name: "VHDL", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["edu-tuc"] },
   { name: "Automotive Software Engineering", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["edu-tuc"] },
   { name: "Design of Software for Embedded Systems", category: "Embedded & Hardware", personas: ["embedded"], sourceIds: ["edu-tuc"] },
