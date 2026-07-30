@@ -358,21 +358,21 @@ export const projects: ProjectEntry[] = [
     period: { en: "2026", de: "2026" },
     personas: ["embedded"],
     tagline: {
-      en: "A racing game where the \"engine\" is three ECUs arguing over a CAN bus.",
-      de: "Ein Rennspiel, dessen „Motor\" eigentlich drei ECUs sind, die sich über einen CAN-Bus streiten.",
+      en: "A racing game where the \"engine\" is four ECUs arguing over a CAN bus.",
+      de: "Ein Rennspiel, dessen „Motor\" eigentlich vier ECUs sind, die sich über einen CAN-Bus streiten.",
     },
     description: [
       {
-        en: "Built a 3-ECU automotive network — Input, Powertrain, Dashboard — communicating over a virtual CAN bus, mirroring real vehicle electronics architecture end to end.",
-        de: "Baute ein automobiles 3-ECU-Netzwerk — Input, Powertrain, Dashboard — das über einen virtuellen CAN-Bus kommuniziert und die Architektur echter Fahrzeugelektronik end-to-end nachbildet.",
+        en: "Built a 4-ECU automotive network — Input, Powertrain, Dashboard, Multimedia — communicating over a virtual CAN bus, mirroring real vehicle electronics architecture end to end.",
+        de: "Baute ein automobiles 4-ECU-Netzwerk — Input, Powertrain, Dashboard, Multimedia — das über einen virtuellen CAN-Bus kommuniziert und die Architektur echter Fahrzeugelektronik end-to-end nachbildet.",
       },
       {
         en: "Defined every message through a DBC database (the industry-standard automotive signal format) and encoded/decoded it with python-can and cantools.",
         de: "Definierte jede Nachricht über eine DBC-Datenbank (das automobile Industriestandardformat für Signale) und kodierte/dekodierte sie mit python-can und cantools.",
       },
       {
-        en: "Mapped Xbox controller input (triggers, stick) to throttle/brake/steering signals driving a simplified longitudinal physics model — acceleration, drag, speed-derived RPM — at a 20Hz ECU tick rate.",
-        de: "Bildete Xbox-Controller-Eingaben (Trigger, Stick) auf Gas-/Brems-/Lenksignale ab, die ein vereinfachtes Längsdynamik-Modell — Beschleunigung, Luftwiderstand, geschwindigkeitsabhängige Drehzahl — mit 20Hz ECU-Taktrate antreiben.",
+        en: "Mapped Xbox controller input (triggers, stick, buttons) to throttle/brake/steering plus music/media toggling on the Multimedia ECU, driving a simplified longitudinal physics model — acceleration, drag, speed-derived RPM — at a 20Hz ECU tick rate.",
+        de: "Bildete Xbox-Controller-Eingaben (Trigger, Stick, Tasten) auf Gas-/Brems-/Lenksignale sowie Musik-/Medienumschaltung über die Multimedia-ECU ab, die ein vereinfachtes Längsdynamik-Modell — Beschleunigung, Luftwiderstand, geschwindigkeitsabhängige Drehzahl — mit 20Hz ECU-Taktrate antreiben.",
       },
       {
         en: "Applied hardware-level CAN ID filtering so the Powertrain ECU wakes only on relevant frames, with the full pipeline visualized live through a Pygame-rendered dashboard.",
