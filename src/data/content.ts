@@ -528,6 +528,40 @@ export const projects: ProjectEntry[] = [
     links: [{ label: "Read Paper", href: "/docs/automotive-sensor-systems-paper.pdf" }],
     featured: true,
   },
+  {
+    id: "proj-gymgraph",
+    name: "GymGraph — Progressive Overload Tracker",
+    period: { en: "2026", de: "2026" },
+    personas: ["software"],
+    tagline: {
+      en: "A gym log so obsessed with saving taps that it remembers your last set before you do.",
+      de: "Ein Trainingslogbuch, so besessen von Tap-Ersparnis, dass es sich an deinen letzten Satz erinnert, bevor du es tust.",
+    },
+    description: [
+      {
+        en: "Built a mobile-first PWA for logging gym workouts — a floating + button opens a bottom sheet pre-filled with last session's weights as placeholders, so progressive overload is a glance away and logging a set takes almost no typing.",
+        de: "Baute eine mobile-first PWA zum Loggen von Workouts — ein schwebender Plus-Button öffnet ein Bottom Sheet, vorausgefüllt mit den Gewichten der letzten Session als Platzhalter, sodass progressive Overload auf einen Blick sichtbar ist und ein Satz fast tippfrei geloggt wird.",
+      },
+      {
+        en: "Shipped a GitHub-style consistency heatmap and per-exercise progress charts — Weight/Reps/Volume, one colored line per set — plus swipe-to-delete workout cards.",
+        de: "Lieferte eine GitHub-artige Konsistenz-Heatmap und Fortschrittsdiagramme pro Übung — Gewicht/Wiederholungen/Volumen, eine farbige Linie pro Satz — plus Workout-Karten mit Swipe-to-Delete.",
+      },
+      {
+        en: "Deliberately chose Drizzle over Prisma and Turso over Cloudflare D1 to run identical SQL locally and on Workers with zero emulation, then deployed via OpenNext instead of next-on-pages to keep the codebase in plain Node.js instead of an edge-only dialect.",
+        de: "Entschied sich bewusst für Drizzle statt Prisma und Turso statt Cloudflare D1, um identisches SQL lokal und auf Workers ohne Emulation laufen zu lassen, und deployte über OpenNext statt next-on-pages, um die Codebase in reinem Node.js statt einem Edge-only-Dialekt zu halten.",
+      },
+      {
+        en: "Hand-wrote a service worker with three caching strategies (network-first for HTML/API, cache-first for hashed static assets) for true offline use, wired to GitHub Actions so every push to main redeploys to Cloudflare Workers automatically.",
+        de: "Schrieb einen Service Worker mit drei Caching-Strategien von Hand (network-first für HTML/API, cache-first für gehashte statische Assets) für echte Offline-Nutzung, verdrahtet mit GitHub Actions, sodass jeder Push auf main automatisch auf Cloudflare Workers deployt.",
+      },
+    ],
+    skills: ["Cloudflare Workers"],
+    links: [
+      { label: "Code", href: "https://github.com/pbplop29/tracker" },
+      { label: "Live", href: "https://gym.biplovpokhrel.com.np/" },
+    ],
+    featured: true,
+  },
 ];
 
 export const personalProjects: L[] = [
@@ -579,6 +613,7 @@ export const skills: Skill[] = [
   { name: "Apache Superset", category: "Messaging & Data", personas: ["software"], sourceIds: ["exp-lowes-se"] },
 
   // DevOps
+  { name: "Cloudflare Workers", category: "DevOps", personas: ["software"], sourceIds: ["proj-gymgraph"] },
   { name: "Docker", category: "DevOps", personas: ["software"], sourceIds: ["exp-lowes-ase", "exp-lowes-se"] },
   { name: "Kubernetes", category: "DevOps", personas: ["software"], sourceIds: ["exp-lowes-ase"] },
   { name: "Jenkins", category: "DevOps", personas: ["software"], sourceIds: ["exp-lowes-ase", "exp-lowes-se"] },
