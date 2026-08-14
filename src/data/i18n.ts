@@ -10,8 +10,6 @@ export const ui = {
     resume: { en: "Resume", de: "Lebenslauf" } as L,
   },
   hero: {
-    greeting: { en: "Hi, I'm —", de: "Hi, ich bin —" } as L,
-    ctaSeeWork: { en: "See the work", de: "Zur Arbeit" } as L,
     ctaDownload: { en: "Download resume", de: "Lebenslauf herunterladen" } as L,
   },
   experience: {
@@ -22,8 +20,8 @@ export const ui = {
     eyebrow: { en: "Toolbox", de: "Werkzeugkasten" } as L,
     title: { en: "Skills", de: "Skills" } as L,
     note: {
-      en: "Not just a word cloud — every skill here traces back to a job, course, or project. Click one to find out where.",
-      de: "Keine bloße Wortwolke — jeder Skill hier lässt sich auf einen Job, Kurs oder ein Projekt zurückführen. Klick drauf, um herauszufinden, wo.",
+      en: "Not just a word cloud -every skill here traces back to a job, course, or project. Click one to find out where.",
+      de: "Keine bloße Wortwolke -jeder Skill hier lässt sich auf einen Job, Kurs oder ein Projekt zurückführen. Klick drauf, um herauszufinden, wo.",
     } as L,
   },
   projects: {
@@ -48,8 +46,8 @@ export const ui = {
   resumeSection: {
     heading: { en: "Want the PDF version?", de: "Lieber die PDF-Version?" } as L,
     subtext: {
-      en: "Same story, boring format — one page, ATS-friendly, no typewriter animation.",
-      de: "Gleiche Geschichte, langweiliges Format — eine Seite, ATS-freundlich, keine Schreibmaschinen-Animation.",
+      en: "Same story, boring format -one page, ATS-friendly, no typewriter animation.",
+      de: "Gleiche Geschichte, langweiliges Format -eine Seite, ATS-freundlich, keine Schreibmaschinen-Animation.",
     } as L,
     button: { en: "Download resume", de: "Lebenslauf herunterladen" } as L,
   },
@@ -57,8 +55,8 @@ export const ui = {
     eyebrow: { en: "Let's talk", de: "Lass uns reden" } as L,
     title: { en: "Get in touch", de: "Kontakt aufnehmen" } as L,
     note: {
-      en: "Open to opportunities on both sides of the toggle — backend systems or automotive software. Or just say hi.",
-      de: "Offen für Möglichkeiten auf beiden Seiten des Schalters — Backend-Systeme oder Automotive-Software. Oder sag einfach Hallo.",
+      en: "Open to opportunities on both sides of the toggle -backend systems or automotive software. Or just say hi.",
+      de: "Offen für Möglichkeiten auf beiden Seiten des Schalters -Backend-Systeme oder Automotive-Software. Oder sag einfach Hallo.",
     } as L,
     email: { en: "Email", de: "E-Mail" } as L,
     phone: { en: "Phone", de: "Telefon" } as L,

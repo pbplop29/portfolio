@@ -85,8 +85,12 @@ export const profile = {
     de: "Tauscht gerade REST-APIs gegen CAN-Busse und Interrupt-Vektoren ein.",
   } as L,
   heroIntro: {
-    en: "Software Engineer out of Bangalore, now doing a master's in Automotive Software Engineering in Chemnitz. I write backend systems and, lately, code that talks directly to silicon. Flip the toggle up top — same person, different register.",
-    de: "Software Engineer aus Bangalore, mache gerade einen Master in Automotive Software Engineering in Chemnitz. Ich schreibe Backend-Systeme und neuerdings auch Code, der direkt mit Silizium spricht. Der Schalter oben wechselt die Perspektive — gleiche Person, anderes Register.",
+    en: "Software Engineer out of Bangalore, now doing a master's in Automotive Software Engineering in Chemnitz. I write backend systems and, lately, code that talks directly to silicon.",
+    de: "Software Engineer aus Bangalore, mache gerade einen Master in Automotive Software Engineering in Chemnitz. Ich schreibe Backend-Systeme und neuerdings auch Code, der direkt mit Silizium spricht.",
+  } as L,
+  heroCta: {
+    en: "Pick a lane below, same person, different register.",
+    de: "Wähle unten eine Spur, gleiche Person, anderes Register.",
   } as L,
   email: "biplov.tuchemnitz@gmail.com",
   emailAlt: "biplov.nitrkl@gmail.com",
@@ -127,8 +131,8 @@ export const experience: ExperienceEntry[] = [
     bullets: [
       {
         text: {
-          en: "Owned features end-to-end — planning, design, implementation, testing, deployment, and production support.",
-          de: "Verantwortete Features end-to-end — Planung, Design, Implementierung, Tests, Deployment und Produktionssupport.",
+          en: "Owned features end-to-end: planning, design, implementation, testing, deployment, and production support.",
+          de: "Verantwortete Features end-to-end: Planung, Design, Implementierung, Tests, Deployment und Produktionssupport.",
         },
         personas: ["software"],
       },
@@ -169,8 +173,8 @@ export const experience: ExperienceEntry[] = [
       },
       {
         text: {
-          en: "Kept Confluence honest and PRs reviewed — planning, design, refinement, the whole loop.",
-          de: "Hielt Confluence aktuell und PRs reviewt — Planung, Design, Refinement, der ganze Kreislauf.",
+          en: "Kept Confluence honest and PRs reviewed: planning, design, refinement, the whole loop.",
+          de: "Hielt Confluence aktuell und PRs reviewt: Planung, Design, Refinement, der ganze Kreislauf.",
         },
         personas: ["software"],
       },
@@ -231,22 +235,22 @@ export const experience: ExperienceEntry[] = [
       },
       {
         text: {
-          en: "Wrote the SQL and the JPA — PostgreSQL persistence, done properly.",
-          de: "Schrieb das SQL und das JPA — PostgreSQL-Persistenz, ordentlich gemacht.",
+          en: "Wrote the SQL and the JPA: PostgreSQL persistence, done properly.",
+          de: "Schrieb das SQL und das JPA: PostgreSQL-Persistenz, ordentlich gemacht.",
         },
         personas: ["software"],
       },
       {
         text: {
-          en: "Unit and integration tests, defect triage, code review — the unglamorous stuff that keeps prod calm.",
-          de: "Unit- und Integrationstests, Fehleranalyse, Code-Reviews — die unglamouröse Arbeit, die die Produktion ruhig hält.",
+          en: "Unit and integration tests, defect triage, code review: the unglamorous stuff that keeps prod calm.",
+          de: "Unit- und Integrationstests, Fehleranalyse, Code-Reviews: die unglamouröse Arbeit, die die Produktion ruhig hält.",
         },
         personas: ["software"],
       },
       {
         text: {
-          en: "Agile, Git, Jenkins, Docker, Jira, CI/CD — the full enterprise toolbelt.",
-          de: "Agile, Git, Jenkins, Docker, Jira, CI/CD — der volle Enterprise-Werkzeuggürtel.",
+          en: "Agile, Git, Jenkins, Docker, Jira, CI/CD: the full enterprise toolbelt.",
+          de: "Agile, Git, Jenkins, Docker, Jira, CI/CD: der volle Enterprise-Werkzeuggürtel.",
         },
         personas: ["software"],
       },
@@ -331,8 +335,8 @@ export const education: EducationEntry[] = [
     id: "edu-nitrkl",
     school: "National Institute of Technology, Rourkela",
     degree: {
-      en: "B.Tech., Electronics and Communication Engineering — Grade 1.6",
-      de: "B.Tech., Elektronik- und Nachrichtentechnik — Note 1.6",
+      en: "B.Tech., Electronics and Communication Engineering, Grade 1.6",
+      de: "B.Tech., Elektronik- und Nachrichtentechnik, Note 1.6",
     },
     location: "Rourkela, India",
     period: { en: "June 2019 – May 2023", de: "Juni 2019 – Mai 2023" },
@@ -354,7 +358,7 @@ export const education: EducationEntry[] = [
 export const projects: ProjectEntry[] = [
   {
     id: "proj-canbusdrive",
-    name: "CANbusDrive — Multi-ECU CAN Bus Vehicle Simulator",
+    name: "CANbusDrive: Multi-ECU CAN Bus Vehicle Simulator",
     period: { en: "2026", de: "2026" },
     personas: ["embedded"],
     tagline: {
@@ -363,16 +367,16 @@ export const projects: ProjectEntry[] = [
     },
     description: [
       {
-        en: "Built a 4-ECU automotive network — Input, Powertrain, Dashboard, Multimedia — communicating over a virtual CAN bus, mirroring real vehicle electronics architecture end to end.",
-        de: "Baute ein automobiles 4-ECU-Netzwerk — Input, Powertrain, Dashboard, Multimedia — das über einen virtuellen CAN-Bus kommuniziert und die Architektur echter Fahrzeugelektronik end-to-end nachbildet.",
+        en: "Built a 4-ECU automotive network (Input, Powertrain, Dashboard, Multimedia) communicating over a virtual CAN bus, mirroring real vehicle electronics architecture end to end.",
+        de: "Baute ein automobiles 4-ECU-Netzwerk (Input, Powertrain, Dashboard, Multimedia), das über einen virtuellen CAN-Bus kommuniziert und die Architektur echter Fahrzeugelektronik end-to-end nachbildet.",
       },
       {
         en: "Defined every message through a DBC database (the industry-standard automotive signal format) and encoded/decoded it with python-can and cantools.",
         de: "Definierte jede Nachricht über eine DBC-Datenbank (das automobile Industriestandardformat für Signale) und kodierte/dekodierte sie mit python-can und cantools.",
       },
       {
-        en: "Mapped Xbox controller input (triggers, stick, buttons) to throttle/brake/steering plus music/media toggling on the Multimedia ECU, driving a simplified longitudinal physics model — acceleration, drag, speed-derived RPM — at a 20Hz ECU tick rate.",
-        de: "Bildete Xbox-Controller-Eingaben (Trigger, Stick, Tasten) auf Gas-/Brems-/Lenksignale sowie Musik-/Medienumschaltung über die Multimedia-ECU ab, die ein vereinfachtes Längsdynamik-Modell — Beschleunigung, Luftwiderstand, geschwindigkeitsabhängige Drehzahl — mit 20Hz ECU-Taktrate antreiben.",
+        en: "Mapped Xbox controller input (triggers, stick, buttons) to throttle/brake/steering plus music/media toggling on the Multimedia ECU, driving a simplified longitudinal physics model (acceleration, drag, speed-derived RPM) at a 20Hz ECU tick rate.",
+        de: "Bildete Xbox-Controller-Eingaben (Trigger, Stick, Tasten) auf Gas-/Brems-/Lenksignale sowie Musik-/Medienumschaltung über die Multimedia-ECU ab, die ein vereinfachtes Längsdynamik-Modell (Beschleunigung, Luftwiderstand, geschwindigkeitsabhängige Drehzahl) mit 20Hz ECU-Taktrate antreiben.",
       },
       {
         en: "Applied hardware-level CAN ID filtering so the Powertrain ECU wakes only on relevant frames, with the full pipeline visualized live through a Pygame-rendered dashboard.",
@@ -385,7 +389,7 @@ export const projects: ProjectEntry[] = [
   },
   {
     id: "proj-raspnet",
-    name: "RASPNet — Multi-Node Ring Network Firmware",
+    name: "RASPNet: Multi-Node Ring Network Firmware",
     period: { en: "May – Jul 2026", de: "Mai – Jul. 2026" },
     personas: ["embedded"],
     tagline: {
@@ -394,8 +398,8 @@ export const projects: ProjectEntry[] = [
     },
     description: [
       {
-        en: "Implemented a 3-layer bit-serial ring network protocol stack in C for the ATmega328P — custom framing, streaming CRC-32 validation, cut-through packet relaying.",
-        de: "Implementierte einen 3-Schicht-Bit-seriellen Ringnetzwerk-Protokollstack in C für den ATmega328P — eigenes Framing, Streaming-CRC-32-Validierung, Cut-Through-Paketweiterleitung.",
+        en: "Implemented a 3-layer bit-serial ring network protocol stack in C for the ATmega328P: custom framing, streaming CRC-32 validation, cut-through packet relaying.",
+        de: "Implementierte einen 3-Schicht-Bit-seriellen Ringnetzwerk-Protokollstack in C für den ATmega328P: eigenes Framing, Streaming-CRC-32-Validierung, Cut-Through-Paketweiterleitung.",
       },
       {
         en: "Built ISR-driven bit-level clock/data synchronization with sliding-window preamble detection for reliable inter-node comms.",
@@ -420,8 +424,8 @@ export const projects: ProjectEntry[] = [
     period: { en: "Apr 2023", de: "Apr. 2023" },
     personas: ["embedded", "software"],
     tagline: {
-      en: "A pulse oximeter that phones home — over WiFi, in real time.",
-      de: "Ein Pulsoximeter, das nach Hause telefoniert — über WLAN, in Echtzeit.",
+      en: "A pulse oximeter that phones home, over WiFi, in real time.",
+      de: "Ein Pulsoximeter, das nach Hause telefoniert, über WLAN, in Echtzeit.",
     },
     description: [
       {
@@ -450,8 +454,8 @@ export const projects: ProjectEntry[] = [
     period: { en: "Apr 2022", de: "Apr. 2022" },
     personas: ["embedded", "software"],
     tagline: {
-      en: "92% detection accuracy — the other 8% just really wanted to test the alert system.",
-      de: "92% Erkennungsgenauigkeit — die restlichen 8% wollten einfach unbedingt das Alarmsystem testen.",
+      en: "92% detection accuracy. The other 8% just really wanted to test the alert system.",
+      de: "92% Erkennungsgenauigkeit. Die restlichen 8% wollten einfach unbedingt das Alarmsystem testen.",
     },
     description: [
       {
@@ -468,29 +472,29 @@ export const projects: ProjectEntry[] = [
   },
   {
     id: "proj-tvcast",
-    name: "TVCast — LAN Media Remote & Vocab Trainer",
+    name: "TVCast: LAN Media Remote & Vocab Trainer",
     period: { en: "2026", de: "2026" },
     personas: ["software"],
     tagline: {
-      en: "Turns any phone on the LAN into a TV remote — and idle downtime into a vocab pop quiz.",
-      de: "Verwandelt jedes Handy im LAN in eine Fernbedienung — und Leerlaufzeiten in ein Vokabel-Quiz.",
+      en: "Turns any phone on the LAN into a TV remote, and idle downtime into a vocab pop quiz.",
+      de: "Verwandelt jedes Handy im LAN in eine Fernbedienung, und Leerlaufzeiten in ein Vokabel-Quiz.",
     },
     description: [
       {
-        en: "Built a self-hosted media remote that lets any phone on the LAN control a desktop's video playback — search, queue, seek, volume — in real time, using FastAPI and WebSockets to broadcast playback state at 1Hz with zero page reloads.",
-        de: "Baute eine selbst gehostete Medienfernbedienung, mit der jedes Handy im LAN die Videowiedergabe eines Desktops steuert — Suche, Warteschlange, Spulen, Lautstärke — in Echtzeit über FastAPI und WebSockets, die den Wiedergabestatus mit 1Hz an alle Clients senden, ganz ohne Neuladen der Seite.",
+        en: "Built a self-hosted media remote that lets any phone on the LAN control a desktop's video playback (search, queue, seek, volume) in real time, using FastAPI and WebSockets to broadcast playback state at 1Hz with zero page reloads.",
+        de: "Baute eine selbst gehostete Medienfernbedienung, mit der jedes Handy im LAN die Videowiedergabe eines Desktops steuert (Suche, Warteschlange, Spulen, Lautstärke), in Echtzeit über FastAPI und WebSockets, die den Wiedergabestatus mit 1Hz an alle Clients senden, ganz ohne Neuladen der Seite.",
       },
       {
         en: "Designed a stateful queue model on top of mpv's native playlist, distinguishing ad-hoc \"play now\" entries from persistent queued ones, driven entirely over mpv's local JSON IPC socket with blocking I/O offloaded to worker threads.",
-        de: "Entwarf ein zustandsbehaftetes Warteschlangenmodell auf Basis der nativen mpv-Playlist, das spontane \"jetzt abspielen\"-Einträge von dauerhaft eingereihten trennt — gesteuert über mpv's lokalen JSON-IPC-Socket, mit blockierendem I/O ausgelagert auf Worker-Threads.",
+        de: "Entwarf ein zustandsbehaftetes Warteschlangenmodell auf Basis der nativen mpv-Playlist, das spontane \"jetzt abspielen\"-Einträge von dauerhaft eingereihten trennt, gesteuert über mpv's lokalen JSON-IPC-Socket, mit blockierendem I/O ausgelagert auf Worker-Threads.",
       },
       {
         en: "Implemented a German vocabulary flashcard game that auto-activates whenever the queue goes idle, rendered straight onto the TV via mpv's OSD/ASS overlay, complete with a persistent multiplayer leaderboard and PIN-gated API access.",
-        de: "Implementierte ein deutsches Vokabel-Karteikarten-Spiel, das sich automatisch aktiviert, sobald die Warteschlange leerläuft — direkt auf den Fernseher gerendert über mpv's OSD/ASS-Overlay, inklusive persistenter Mehrspieler-Bestenliste und PIN-geschütztem API-Zugriff.",
+        de: "Implementierte ein deutsches Vokabel-Karteikarten-Spiel, das sich automatisch aktiviert, sobald die Warteschlange leerläuft, direkt auf den Fernseher gerendert über mpv's OSD/ASS-Overlay, inklusive persistenter Mehrspieler-Bestenliste und PIN-geschütztem API-Zugriff.",
       },
       {
-        en: "Shipped as a single-file Python backend with an embedded vanilla JS/HTML/CSS frontend — no build step, no framework — with config and secrets externalized via environment variables for public release.",
-        de: "Ausgeliefert als Single-File-Python-Backend mit eingebettetem Vanilla-JS/HTML/CSS-Frontend — kein Build-Schritt, kein Framework — mit Konfiguration und Secrets ausgelagert in Umgebungsvariablen für die öffentliche Veröffentlichung.",
+        en: "Shipped as a single-file Python backend with an embedded vanilla JS/HTML/CSS frontend (no build step, no framework) with config and secrets externalized via environment variables for public release.",
+        de: "Ausgeliefert als Single-File-Python-Backend mit eingebettetem Vanilla-JS/HTML/CSS-Frontend (kein Build-Schritt, kein Framework) mit Konfiguration und Secrets ausgelagert in Umgebungsvariablen für die öffentliche Veröffentlichung.",
       },
     ],
     skills: ["Python", "FastAPI", "WebSockets", "mpv", "yt-dlp"],
@@ -503,8 +507,8 @@ export const projects: ProjectEntry[] = [
     period: { en: "2026", de: "2026" },
     personas: ["embedded"],
     tagline: {
-      en: "A deep dive into how an EV knows which way its motor is spinning — and what it costs to know that precisely.",
-      de: "Eine Tiefenanalyse, woher ein E-Auto weiß, in welche Richtung sich sein Motor dreht — und was es kostet, das präzise zu wissen.",
+      en: "A deep dive into how an EV knows which way its motor is spinning, and what it costs to know that precisely.",
+      de: "Eine Tiefenanalyse, woher ein E-Auto weiß, in welche Richtung sich sein Motor dreht, und was es kostet, das präzise zu wissen.",
     },
     description: [
       {
@@ -520,8 +524,8 @@ export const projects: ProjectEntry[] = [
         de: "Bewertete die automobiltaugliche Robustheit unter EMI, extremen Temperaturen, Sensor-Fehlausrichtung und Betrieb bei niedriger Drehzahl bzw. Stillstand.",
       },
       {
-        en: "Surveyed emerging directions — sensorless control, adaptive observers, and machine-learning-based rotor position estimation — as future research paths.",
-        de: "Untersuchte aufkommende Richtungen — sensorlose Regelung, adaptive Beobachter und ML-basierte Rotorpositionsschätzung — als zukünftige Forschungsrichtungen.",
+        en: "Surveyed emerging directions (sensorless control, adaptive observers, and machine-learning-based rotor position estimation) as future research paths.",
+        de: "Untersuchte aufkommende Richtungen (sensorlose Regelung, adaptive Beobachter und ML-basierte Rotorpositionsschätzung) als zukünftige Forschungsrichtungen.",
       },
     ],
     skills: ["Automotive Sensor Systems", "Neurocomputing"],
@@ -530,7 +534,7 @@ export const projects: ProjectEntry[] = [
   },
   {
     id: "proj-gymgraph",
-    name: "GymGraph — Progressive Overload Tracker",
+    name: "GymGraph: Progressive Overload Tracker",
     period: { en: "2026", de: "2026" },
     personas: ["software"],
     tagline: {
@@ -539,12 +543,12 @@ export const projects: ProjectEntry[] = [
     },
     description: [
       {
-        en: "Built a mobile-first PWA for logging gym workouts — a floating + button opens a bottom sheet pre-filled with last session's weights as placeholders, so progressive overload is a glance away and logging a set takes almost no typing.",
-        de: "Baute eine mobile-first PWA zum Loggen von Workouts — ein schwebender Plus-Button öffnet ein Bottom Sheet, vorausgefüllt mit den Gewichten der letzten Session als Platzhalter, sodass progressive Overload auf einen Blick sichtbar ist und ein Satz fast tippfrei geloggt wird.",
+        en: "Built a mobile-first PWA for logging gym workouts: a floating + button opens a bottom sheet pre-filled with last session's weights as placeholders, so progressive overload is a glance away and logging a set takes almost no typing.",
+        de: "Baute eine mobile-first PWA zum Loggen von Workouts: ein schwebender Plus-Button öffnet ein Bottom Sheet, vorausgefüllt mit den Gewichten der letzten Session als Platzhalter, sodass progressive Overload auf einen Blick sichtbar ist und ein Satz fast tippfrei geloggt wird.",
       },
       {
-        en: "Shipped a GitHub-style consistency heatmap and per-exercise progress charts — Weight/Reps/Volume, one colored line per set — plus swipe-to-delete workout cards.",
-        de: "Lieferte eine GitHub-artige Konsistenz-Heatmap und Fortschrittsdiagramme pro Übung — Gewicht/Wiederholungen/Volumen, eine farbige Linie pro Satz — plus Workout-Karten mit Swipe-to-Delete.",
+        en: "Shipped a GitHub-style consistency heatmap and per-exercise progress charts (Weight/Reps/Volume, one colored line per set) plus swipe-to-delete workout cards.",
+        de: "Lieferte eine GitHub-artige Konsistenz-Heatmap und Fortschrittsdiagramme pro Übung (Gewicht/Wiederholungen/Volumen, eine farbige Linie pro Satz) plus Workout-Karten mit Swipe-to-Delete.",
       },
       {
         en: "Deliberately chose Drizzle over Prisma and Turso over Cloudflare D1 to run identical SQL locally and on Workers with zero emulation, then deployed via OpenNext instead of next-on-pages to keep the codebase in plain Node.js instead of an edge-only dialect.",

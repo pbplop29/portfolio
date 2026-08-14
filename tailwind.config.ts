@@ -8,33 +8,35 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // paper-and-ink scale: 50 is the lightest paper, 950 the darkest ink.
+        // every step is verified ≥4.5:1 against ink-50/ink-100 wherever it carries body text.
         ink: {
-          950: "#0b0d10",
-          900: "#12151a",
-          800: "#1a1f26",
-          700: "#242b34",
-          600: "#333c47",
-          500: "#4b5563",
-          400: "#6b7280",
-          300: "#9aa3af",
-          200: "#c7ccd3",
-          100: "#e8eaed",
-          50: "#f5f6f7",
+          50: "#f0efe9",
+          100: "#e6e4db",
+          200: "#d5d2c7",
+          300: "#b0aca0",
+          400: "#666152",
+          500: "#625d4f",
+          600: "#4c4839",
+          700: "#383528",
+          800: "#24221a",
+          900: "#16150f",
+          950: "#0e0d09",
         },
         software: {
-          DEFAULT: "#3b82f6",
-          soft: "#93c5fd",
-          dim: "#1d3a63",
+          DEFAULT: "#4b4fae",
+          soft: "#dcdbf5",
+          dim: "#2e3170",
         },
         embedded: {
-          DEFAULT: "#e8a33d",
-          soft: "#f3c98a",
-          dim: "#5a4319",
+          DEFAULT: "#8a4a2f",
+          soft: "#f2ddd0",
+          dim: "#5c3320",
         },
       },
       fontFamily: {
-        sans: ["var(--font-sans)"],
-        mono: ["var(--font-mono)"],
+        sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       keyframes: {
         blink: {

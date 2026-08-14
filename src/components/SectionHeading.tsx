@@ -23,16 +23,18 @@ export default function SectionHeading({
       transition={{ duration: 0.5 }}
       className="mb-10"
     >
-      <p
-        className={cn(
-          "mb-2 font-mono text-xs uppercase tracking-[0.2em]",
-          persona === "software" ? "text-software" : "text-embedded"
-        )}
-      >
-        {eyebrow}
-      </p>
-      <h2 className="text-3xl font-bold tracking-tight text-ink-50 sm:text-4xl">{title}</h2>
-      {note && <p className="mt-2 max-w-xl text-sm text-ink-400">{note}</p>}
+      <h2 className="text-3xl font-bold tracking-tight text-ink-950 sm:text-4xl">
+        {title}
+        <span
+          className={cn(
+            "ml-3 text-xl font-normal italic",
+            persona === "software" ? "text-software/80" : "text-embedded/80"
+          )}
+        >
+          -{eyebrow}
+        </span>
+      </h2>
+      {note && <p className="mt-2 max-w-xl text-sm text-ink-600">{note}</p>}
     </motion.div>
   );
 }

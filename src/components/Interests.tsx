@@ -26,8 +26,8 @@ export default function Interests() {
             transition={{ duration: 0.35, delay: i * 0.05 }}
             whileHover={{ scale: 1.05 }}
             className={cn(
-              "flex items-center gap-2 rounded-full border px-4 py-2 text-sm text-ink-200 transition-colors",
-              accent === "software" ? "border-ink-800 hover:border-software/50" : "border-ink-800 hover:border-embedded/50"
+              "flex items-center gap-2 rounded-md border px-4 py-2 text-sm text-ink-800 transition-colors",
+              accent === "software" ? "border-ink-200 hover:border-software/50" : "border-ink-200 hover:border-embedded/50"
             )}
           >
             <span className="text-base">{it.emoji}</span>

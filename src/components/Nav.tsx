@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { Download, Menu, X } from "lucide-react";
-import PersonaToggle from "./PersonaToggle";
 import LanguageToggle from "./LanguageToggle";
 import { profile } from "@/data/content";
 import { usePersona } from "@/context/PersonaContext";
@@ -35,7 +34,7 @@ export default function Nav() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled ? "border-b border-ink-800 bg-ink-950/85 backdrop-blur" : "bg-transparent"
+        scrolled ? "border-b border-ink-200 bg-ink-50/85 backdrop-blur" : "bg-transparent"
       )}
     >
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
@@ -50,30 +49,30 @@ export default function Nav() {
         </a>
 
         <div className="hidden items-center gap-6 md:flex">
-          <ul className="flex items-center gap-6 text-sm text-ink-300">
+          <ul className="flex items-center gap-6 text-sm text-ink-700">
             {links.map((l) => (
               <li key={l.href}>
-                <a href={l.href} className="transition-colors hover:text-ink-50">
+                <a href={l.href} className="transition-colors hover:text-ink-950">
                   {l.label}
                 </a>
               </li>
             ))}
           </ul>
-          <div className="flex items-center gap-2">
-            <PersonaToggle compact />
-            <LanguageToggle compact />
-          </div>
+          <LanguageToggle compact />
           <a
             href={profile.resumeUrl}
             download
-            className="flex items-center gap-1.5 rounded-full border border-ink-700 px-3.5 py-1.5 text-sm text-ink-200 transition-colors hover:border-ink-500 hover:text-ink-50"
+            className={cn(
+              "flex items-center gap-1.5 rounded-md px-3.5 py-1.5 text-sm font-medium text-white transition-colors",
+              persona === "software" ? "bg-software hover:bg-software-dim" : "bg-embedded hover:bg-embedded-dim"
+            )}
           >
             <Download size={14} /> {ui.nav.resume[lang]}
           </a>
         </div>
 
         <button
-          className="text-ink-200 md:hidden"
+          className="text-ink-800 md:hidden"
           onClick={() => setOpen((o) => !o)}
           aria-label="Toggle menu"
         >
@@ -82,8 +81,8 @@ export default function Nav() {
       </nav>
 
       {open && (
-        <div className="border-t border-ink-800 bg-ink-950/95 px-6 py-6 md:hidden">
-          <ul className="flex flex-col gap-4 text-sm text-ink-200">
+        <div className="border-t border-ink-200 bg-ink-50/95 px-6 py-6 md:hidden">
+          <ul className="flex flex-col gap-4 text-sm text-ink-800">
             {links.map((l) => (
               <li key={l.href}>
                 <a href={l.href} onClick={() => setOpen(false)}>
@@ -93,14 +92,14 @@ export default function Nav() {
             ))}
           </ul>
           <div className="mt-5 flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <PersonaToggle compact />
-              <LanguageToggle compact />
-            </div>
+            <LanguageToggle compact />
             <a
               href={profile.resumeUrl}
               download
-              className="flex items-center gap-1.5 rounded-full border border-ink-700 px-3.5 py-1.5 text-sm text-ink-200"
+              className={cn(
+                "flex items-center gap-1.5 rounded-md px-3.5 py-1.5 text-sm font-medium text-white",
+                persona === "software" ? "bg-software" : "bg-embedded"
+              )}
             >
               <Download size={14} /> {ui.nav.resume[lang]}
             </a>

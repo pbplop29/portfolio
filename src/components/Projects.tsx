@@ -41,7 +41,7 @@ export default function Projects() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-40px" }}
         transition={{ duration: 0.4 }}
-        className="mt-8 rounded-2xl border border-dashed border-ink-800 p-6"
+        className="mt-8 border-t border-dashed border-ink-200 pt-6"
       >
         <h3 className="mb-3 font-mono text-xs uppercase tracking-widest text-ink-500">
           {ui.projects.alsoLurking[lang]}
@@ -50,7 +50,7 @@ export default function Projects() {
           {personalProjects.map((p) => (
             <span
               key={p.en}
-              className="rounded-full border border-ink-800 px-3 py-1.5 text-xs text-ink-400"
+              className="rounded-md border border-ink-200 px-3 py-1.5 text-xs text-ink-600"
             >
               {p[lang]}
             </span>

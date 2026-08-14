@@ -12,7 +12,7 @@ export default function LanguageToggle({ compact = false }: { compact?: boolean 
   return (
     <div
       className={cn(
-        "flex items-center rounded-full border border-ink-700 bg-ink-900/80 p-0.5 font-mono backdrop-blur",
+        "flex items-center rounded-full border border-ink-300 bg-ink-100/80 p-0.5 font-mono backdrop-blur",
         compact ? "text-[11px]" : "text-xs"
       )}
       role="tablist"
@@ -28,9 +28,9 @@ export default function LanguageToggle({ compact = false }: { compact?: boolean 
             "rounded-full px-2.5 py-1 font-semibold uppercase transition-colors",
             lang === l
               ? accent === "software"
-                ? "bg-software text-ink-950"
-                : "bg-embedded text-ink-950"
-              : "text-ink-400 hover:text-ink-200"
+                ? "bg-software text-white"
+                : "bg-embedded text-white"
+              : "text-ink-600 hover:text-ink-800"
           )}
         >
           {l}

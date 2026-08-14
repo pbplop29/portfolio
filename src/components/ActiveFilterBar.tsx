@@ -24,7 +24,7 @@ export default function ActiveFilterBar() {
         >
           <div
             className={cn(
-              "flex w-fit items-center gap-2 rounded-full border px-3.5 py-1.5 text-xs font-mono",
+              "flex w-fit items-center gap-2 rounded-md border px-3.5 py-1.5 text-xs font-mono",
               persona === "software" ? "border-software/50 text-software" : "border-embedded/50 text-embedded"
             )}
           >
@@ -32,7 +32,7 @@ export default function ActiveFilterBar() {
             <button
               onClick={() => setActiveSkill(null)}
               aria-label="Clear filter"
-              className="ml-1 rounded-full p-0.5 hover:bg-white/10"
+              className="ml-1 rounded-full p-0.5 hover:bg-ink-950/10"
             >
               <X size={13} />
             </button>

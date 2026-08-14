@@ -12,7 +12,7 @@ export default function DocLink({ label, file }: DocumentLink) {
       href={file}
       target="_blank"
       rel="noreferrer"
-      className="inline-flex items-center gap-1.5 rounded-md border border-dashed border-ink-600 px-2.5 py-1 font-mono text-[11px] text-ink-300 transition-colors hover:border-ink-400 hover:text-ink-50"
+      className="inline-flex items-center gap-1.5 rounded-md border border-dashed border-ink-400 px-2.5 py-1 font-mono text-[11px] text-ink-700 transition-colors hover:border-ink-600 hover:text-ink-950"
     >
       <FileText size={11} /> {label[lang]}
     </a>

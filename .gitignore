@@ -5,4 +5,7 @@ out
 .DS_Store
 next-env.d.ts
 .claude
+.impeccable
+.wrangler
+PRODUCT.md
 tsconfig.tsbuildinfo

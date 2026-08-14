@@ -20,13 +20,13 @@ export default function SkillPill({
     <button
       onClick={() => setActiveSkill(name)}
       className={cn(
-        "rounded-full border font-mono transition-colors",
+        "rounded-md border font-mono transition-colors",
         size === "sm" ? "px-2.5 py-1 text-[11px]" : "px-3 py-1.5 text-xs",
         active
           ? accent === "software"
-            ? "border-software bg-software text-ink-950"
-            : "border-embedded bg-embedded text-ink-950"
-          : "border-ink-700 text-ink-400 hover:border-ink-500 hover:text-ink-200"
+            ? "border-software bg-software text-white"
+            : "border-embedded bg-embedded text-white"
+          : "border-ink-300 text-ink-600 hover:border-ink-500 hover:text-ink-800"
       )}
     >
       {name}

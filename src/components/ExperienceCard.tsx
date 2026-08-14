@@ -27,21 +27,17 @@ export default function ExperienceCard({ entry }: { entry: ExperienceEntry }) {
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.45 }}
       className={cn(
-        "relative rounded-2xl border p-6 transition-all duration-300 sm:p-7",
-        activeSkill && matchesFilter
-          ? accent === "software"
-            ? "border-software/60 bg-software/[0.04] shadow-[0_0_0_1px_rgba(59,130,246,0.15)]"
-            : "border-embedded/60 bg-embedded/[0.04] shadow-[0_0_0_1px_rgba(232,163,61,0.15)]"
-          : "border-ink-800 bg-ink-900/40",
+        "group relative -mx-6 rounded-lg border-t border-ink-200/70 px-6 py-8 transition-colors duration-300 first:border-t-0 first:pt-0 sm:-mx-7 sm:px-7",
+        activeSkill && matchesFilter && (accent === "software" ? "bg-software/[0.05]" : "bg-embedded/[0.05]"),
         activeSkill && !matchesFilter && "opacity-30",
         !isRelevant && !activeSkill && "opacity-70"
       )}
     >
       <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-        <h3 className="text-lg font-semibold text-ink-50">{entry.role[lang]}</h3>
-        <span className="font-mono text-xs text-ink-500">{entry.period[lang]}</span>
+        <h3 className="text-lg font-semibold text-ink-950">{entry.role[lang]}</h3>
+        <span className="tabular font-mono text-xs text-ink-500">{entry.period[lang]}</span>
       </div>
-      <p className="mt-0.5 text-sm text-ink-400">
+      <p className="mt-0.5 text-sm text-ink-600">
         {entry.org} · {entry.location}
       </p>
       <p className={cn("mt-3 text-sm italic", accent === "software" ? "text-software/80" : "text-embedded/80")}>
@@ -54,7 +50,7 @@ export default function ExperienceCard({ entry }: { entry: ExperienceEntry }) {
             key={i}
             className={cn(
               "flex gap-2.5 text-sm leading-relaxed transition-opacity",
-              b.personas.includes(persona) ? "text-ink-300" : "text-ink-500 opacity-60"
+              b.personas.includes(persona) ? "text-ink-700" : "text-ink-500 opacity-60"
             )}
           >
             <span className="mt-1.5 h-1 w-1 flex-none rounded-full bg-current" />
@@ -70,7 +66,7 @@ export default function ExperienceCard({ entry }: { entry: ExperienceEntry }) {
       </div>
 
       {entry.documents && entry.documents.length > 0 && (
-        <div className="mt-4 flex flex-wrap gap-2 border-t border-dashed border-ink-800 pt-4">
+        <div className="mt-4 flex flex-wrap gap-2 border-t border-dashed border-ink-200 pt-4">
           {entry.documents.map((d) => (
             <DocLink key={d.file} label={d.label} file={d.file} />
           ))}

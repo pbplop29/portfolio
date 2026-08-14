@@ -30,16 +30,13 @@ export default function Contact() {
       setCopied(true);
       setTimeout(() => setCopied(false), 1800);
     } catch {
-      // clipboard API unavailable — silently ignore
+      // clipboard API unavailable -silently ignore
     }
   };
 
-  const iconWrapClass = cn(
-    "flex h-10 w-10 flex-none items-center justify-center rounded-full transition-colors",
-    accent === "software"
-      ? "bg-software/15 text-software group-hover:bg-software group-hover:text-ink-950"
-      : "bg-embedded/15 text-embedded group-hover:bg-embedded group-hover:text-ink-950"
-  );
+  const iconClass = cn("flex-none transition-colors", accent === "software" ? "text-software" : "text-embedded");
+  const rowClass =
+    "group -mx-6 flex items-center gap-4 border-t border-ink-200/70 px-6 py-5 transition-colors hover:bg-ink-100/40 sm:-mx-7 sm:px-7";
 
   return (
     <section id="contact" className="mx-auto max-w-3xl px-6 py-24">
@@ -48,7 +45,7 @@ export default function Contact() {
         title={ui.contact.title[lang]}
         note={ui.contact.note[lang]}
       />
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="sm:grid sm:grid-cols-2 sm:gap-x-8">
         {links.map(({ icon: Icon, label, value, href }, i) => (
           <motion.a
             key={label}
@@ -59,14 +56,12 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.4, delay: i * 0.05 }}
-            className="group flex items-center gap-4 rounded-2xl border border-ink-800 bg-ink-900/40 p-5 transition-colors hover:border-ink-600"
+            className={rowClass}
           >
-            <div className={iconWrapClass}>
-              <Icon size={18} />
-            </div>
+            <Icon size={18} className={iconClass} />
             <div className="min-w-0">
               <p className="text-xs uppercase tracking-widest text-ink-500">{label}</p>
-              <p className="truncate text-sm font-medium text-ink-100">{value}</p>
+              <p className="truncate text-sm font-medium text-ink-900">{value}</p>
             </div>
           </motion.a>
         ))}
@@ -77,14 +72,12 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.4, delay: links.length * 0.05 }}
-          className="group flex items-center gap-4 rounded-2xl border border-ink-800 bg-ink-900/40 p-5 text-left transition-colors hover:border-ink-600"
+          className={cn(rowClass, "text-left")}
         >
-          <div className={iconWrapClass}>
-            {copied ? <Check size={18} /> : <MessageCircle size={18} />}
-          </div>
+          {copied ? <Check size={18} className={iconClass} /> : <MessageCircle size={18} className={iconClass} />}
           <div className="min-w-0">
             <p className="text-xs uppercase tracking-widest text-ink-500">Discord</p>
-            <p className="truncate text-sm font-medium text-ink-100">{profile.discord}</p>
+            <p className="truncate text-sm font-medium text-ink-900">{profile.discord}</p>
             <p className="mt-0.5 truncate text-[11px] text-ink-500">
               {copied ? ui.contact.copied[lang] : ui.contact.copyDiscord[lang]}
             </p>
