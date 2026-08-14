@@ -1,9 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Download, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import LanguageToggle from "./LanguageToggle";
-import { profile } from "@/data/content";
 import { usePersona } from "@/context/PersonaContext";
 import { useLanguage } from "@/context/LanguageContext";
 import { ui } from "@/data/i18n";
@@ -59,16 +58,6 @@ export default function Nav() {
             ))}
           </ul>
           <LanguageToggle compact />
-          <a
-            href={profile.resumeUrl}
-            download
-            className={cn(
-              "flex items-center gap-1.5 rounded-md px-3.5 py-1.5 text-sm font-medium text-white transition-colors",
-              persona === "software" ? "bg-software hover:bg-software-dim" : "bg-embedded hover:bg-embedded-dim"
-            )}
-          >
-            <Download size={14} /> {ui.nav.resume[lang]}
-          </a>
         </div>
 
         <button
@@ -91,18 +80,8 @@ export default function Nav() {
               </li>
             ))}
           </ul>
-          <div className="mt-5 flex items-center justify-between">
+          <div className="mt-5">
             <LanguageToggle compact />
-            <a
-              href={profile.resumeUrl}
-              download
-              className={cn(
-                "flex items-center gap-1.5 rounded-md px-3.5 py-1.5 text-sm font-medium text-white",
-                persona === "software" ? "bg-software" : "bg-embedded"
-              )}
-            >
-              <Download size={14} /> {ui.nav.resume[lang]}
-            </a>
           </div>
         </div>
       )}

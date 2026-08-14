@@ -31,7 +31,7 @@ export default function SectionHeading({
             persona === "software" ? "text-software/80" : "text-embedded/80"
           )}
         >
-          -{eyebrow}
+          - {eyebrow}
         </span>
       </h2>
       {note && <p className="mt-2 max-w-xl text-sm text-ink-600">{note}</p>}

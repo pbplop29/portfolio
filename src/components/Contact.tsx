@@ -30,7 +30,7 @@ export default function Contact() {
       setCopied(true);
       setTimeout(() => setCopied(false), 1800);
     } catch {
-      // clipboard API unavailable -silently ignore
+      // clipboard API unavailable, silently ignore
     }
   };
 

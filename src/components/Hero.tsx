@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { Github, Linkedin, Mail, Phone, Gamepad2, Check } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, Gamepad2, Check, Download } from "lucide-react";
 import { usePersona } from "@/context/PersonaContext";
 import { useLanguage } from "@/context/LanguageContext";
 import { profile, type Persona } from "@/data/content";
@@ -140,6 +140,7 @@ function StageObject({
 
 export default function Hero() {
   const { lang } = useLanguage();
+  const { persona } = usePersona();
   const [discordCopied, setDiscordCopied] = useState(false);
 
   const copyDiscord = async () => {
@@ -167,7 +168,7 @@ export default function Hero() {
             <p className="text-base text-ink-700">{profile.heroIntro[lang]}</p>
             <p className="mt-3 font-mono text-xs uppercase tracking-[0.18em] text-ink-600">{profile.heroCta[lang]}</p>
           </div>
-          <div className="flex items-center gap-5 sm:mr-6">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-3 sm:justify-end">
             <ContactIcon icon={Github} value="pbplop29" href={profile.github} />
             <ContactIcon icon={Linkedin} value="biplov-nitrkl" href={profile.linkedin} />
             <ContactIcon icon={Mail} value={profile.email} href={`mailto:${profile.email}`} />
@@ -179,6 +180,16 @@ export default function Hero() {
               onClick={copyDiscord}
             />
             <ContactIcon icon={Gamepad2} value={`Steam: ${profile.steam}`} href={profile.steamUrl} />
+            <a
+              href={profile.resumeUrl}
+              download
+              className={cn(
+                "flex items-center gap-1.5 text-sm font-medium transition-colors",
+                persona === "software" ? "text-software hover:text-software-dim" : "text-embedded hover:text-embedded-dim"
+              )}
+            >
+              <Download size={16} /> {ui.nav.resume[lang]}
+            </a>
           </div>
         </div>
       </motion.div>
