@@ -415,7 +415,7 @@ export const projects: ProjectEntry[] = [
       },
     ],
     skills: ["C", "AVR/ATmega328P", "ISR Programming", "Python"],
-    links: [{ label: "Code", href: "https://gitlab.hrz.tu-chemnitz.de/pokb-at-tu-chemnitz.de/embeddedlab" }],
+    links: [{ label: "Code", href: "https://github.com/pbplop29/RASPNet" }],
     featured: true,
   },
   {
